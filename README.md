@@ -558,6 +558,9 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
   nach ihrem Eigennamen. Bei einer Handysprache, die die App nicht kennt, erscheint sie auf Englisch.
   Arabisch wird von rechts nach links dargestellt.
 - **Schwebende Leiste** (Standard an), siehe [Bedienung](#schwebende-leiste).
+- **Hintergrund** im hellen Design: *Systemfarben* (Standard, Farben von Android passend zum Hintergrundbild),
+  *Hellgrau* oder *Elfenbein*. Gilt sofort für Seiten und Listen; Karten und Dialoge behalten die Systemfarben.
+  Das dunkle Design bleibt unverändert.
 
 ### Weitere Seiten unter „Mehr“
 
@@ -568,7 +571,7 @@ Unter jedem Eintrag steht kurz der Zustand (z. B. „App-Sperre an“, „Protok
 |---|---|---|
 | **Einstellungen** | Dateien und Ordner | Ordneransicht in der App, Ordneransicht beim Teilen, Im Android-Dateimanager anzeigen, Vorschaubilder |
 | | Rückfragen | Papierkorb leeren, Neustart, Ausschalten |
-| | Darstellung | Sprache, schwebende Leiste |
+| | Darstellung | Sprache, schwebende Leiste, Hintergrund |
 | | Updates | Nach Updates suchen, Beim Start nach Updates suchen (nur Version von GitHub) |
 | **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort |
 | | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, rclone.conf exportieren, Provider weitergeben |
@@ -741,7 +744,8 @@ Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
 - **App lock:** fingerprint or app password, which also **encrypts the rclone.conf**; a forgotten password
   can be replaced after confirming with the fingerprint or the phone's screen lock.
 - **Everyday features:** a permanent status bar icon, in-app updates with checksum verification,
-  12 languages, a tablet layout and a detailed log you can turn off.
+  12 languages, a choice of background in the light design (system colors, light gray, ivory), a tablet layout
+  and a detailed log you can turn off.
 
 It uses the same **rclone-extra** build as ZClone on the PC. No accounts, no ads, no tracking.
 Download: [zclone-provider-beta releases](https://github.com/Temkina/zclone-provider-beta/releases) (tag `android-<version>`).
