@@ -559,8 +559,8 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
   Arabisch wird von rechts nach links dargestellt.
 - **Schwebende Leiste** (Standard an), siehe [Bedienung](#schwebende-leiste).
 - **Hintergrund** im hellen Design: *Systemfarben* (Standard, Farben von Android passend zum Hintergrundbild),
-  *Hellgrau* oder *Elfenbein*. Gilt sofort für Seiten und Listen; Karten und Dialoge behalten die Systemfarben.
-  Das dunkle Design bleibt unverändert.
+  *Hellgrau* oder *Elfenbein*. Gilt sofort für Seiten, Listen, Karten, Kacheln, Dialoge und die schwebende Leiste
+  (Karten etwas dunkler im selben Farbton); Akzentfarben bleiben die des Systems. Das dunkle Design bleibt unverändert.
 
 ### Weitere Seiten unter „Mehr“
 
