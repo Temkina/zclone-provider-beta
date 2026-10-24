@@ -57,8 +57,8 @@ WebDAV (Telekom, Nextcloud …) und verschlüsselte crypt-Provider.
 
    Schritt für Schritt am Beispiel Mega: *Mehr → Hilfe*.
 4. Für **Aufträge** (automatische Synchronisation) einmalig *Zugriff auf alle Dateien* erlauben
-   (*Mehr → Einstellungen → Android*). Für Durchsuchen, Teilen und Streaming ist das nicht nötig.
-5. Unter *Mehr → Einstellungen → Android* empfiehlt es sich außerdem,
+   (*Mehr → Android*). Für Durchsuchen, Teilen und Streaming ist das nicht nötig.
+5. Unter *Mehr → Android* empfiehlt es sich außerdem,
    - die *Benachrichtigungen* zu erlauben (Fortschritt, Ergebnisse, Konflikte, Statussymbol) und
    - die App von der *Akku-Optimierung* auszunehmen (zuverlässige Aufträge im Hintergrund).
 
@@ -79,7 +79,7 @@ Die App hat vier Bereiche: **Startseite**, **Provider**, **Aufträge** und **Meh
 - Ein Tipp auf einen Bereich öffnet immer dessen erste Seite.
 - Sie liegt über dem Inhalt, verschwindet beim Scrollen nach unten und kommt beim Scrollen nach oben und auf jeder
   neuen Seite wieder. Unter dem letzten Eintrag jeder Seite bleibt Platz, damit nichts verdeckt bleibt.
-- Abschaltbar unter *Mehr → Individualisierung → Schwebende Leiste*. Dann öffnen sich *Provider* und *Aufträge* über
+- Abschaltbar unter *Mehr → Darstellung → Schwebende Leiste*. Dann öffnen sich *Provider* und *Aufträge* über
   die Kacheln der Startseite und *Mehr* über das Zahnrad oben auf der Startseite.
 - Auf breiten Bildschirmen (Tablets, Chromebooks) liegt die Navigation seitlich, Listen und Details stehen nebeneinander.
 - Das **Haus** oben auf den anderen Seiten führt immer zur Startseite.
@@ -88,8 +88,14 @@ Die App hat vier Bereiche: **Startseite**, **Provider**, **Aufträge** und **Meh
 
 Die App öffnet immer mit der Startseite.
 
-- **Oben:** links das App-Symbol, rechts die Symbole *Freigaben und Streaming* und *Neustart* (mit Rückfrage, siehe
-  [Weitere Seiten unter „Mehr“](#weitere-seiten-unter-mehr)); bei ausgeschalteter Leiste zusätzlich das Zahnrad für *Mehr*.
+- **Oben:** links das App-Symbol, rechts die Symbole *Freigaben und Streaming* und *Ausschalten oder Neustart*; bei
+  ausgeschalteter Leiste zusätzlich das Zahnrad für *Mehr*. Das Symbol *Ausschalten oder Neustart* öffnet ein Menü:
+
+  | Eintrag | Funktion |
+  |---|---|
+  | *Ausschalten* | App komplett beenden, mit Rückfrage (abschaltbar unter *Mehr → Rückfragen → Ausschalten*). Freigaben, Streaming und die Sofort-Überwachung enden, ein laufender Auftrag wird abgebrochen und später wiederholt. Geplante Aufträge und die Hintergrundprüfung starten die App zu ihrer Zeit wieder. |
+  | *Neustart* | App neu starten (Rückfrage abschaltbar, siehe [Weitere Seiten unter „Mehr“](#weitere-seiten-unter-mehr)) |
+  | *Jetzt sperren* | App sofort sperren (nur bei eingeschalteter [App-Sperre](#app-sperre-und-verschlüsselung)) |
 - **Statuskarte:**
 
   | Anzeige | Bedeutung |
@@ -126,8 +132,18 @@ Die App öffnet immer mit der Startseite.
 - Du wählst **einzelne Provider** aus, nicht zwingend alle.
 - **Abhängigkeiten** kommen automatisch mit. Wer einen crypt-Provider wählt, bekommt den Provider darunter dazu.
 - **Mit Passwort verschlüsselte `rclone.conf`** werden unterstützt: Passwort eingeben, „Entschlüsseln“, dann auswählen.
-- Gibt es einen Provider schon, wählst du **behalten** oder **ersetzen**.
+- **Deine vorhandenen Provider bleiben erhalten:** Der Import ergänzt nur, er ersetzt nicht die ganze `rclone.conf`.
+- Gibt es einen Provider schon, wählst du **behalten**, **ersetzen** oder **importierte umbenennen**:
+  - *behalten:* Dein Provider bleibt, der aus der Datei wird nicht übernommen.
+  - *ersetzen:* Der aus der Datei ersetzt deinen.
+  - *importierte umbenennen:* Der aus der Datei kommt unter neuem Namen dazu (z. B. „Mega 2“), Verweise darauf
+    (z. B. von einem verschlüsselten Bereich) werden angepasst, deiner bleibt unverändert.
+  - Braucht ein Provider der Datei einen gleichnamigen, den du schon hast (z. B. `Mega_enc` → `Mega`), ist
+    *importierte umbenennen* vorausgewählt. Sonst zeigte `Mega_enc` auf dein eigenes Konto oder ersetzte es.
 - Fehlerhafte Zeitangaben aus älteren Konfigurationen (Nanosekunden ohne Einheit) werden beim Import korrigiert.
+- **QR-Code scannen:** Statt einer Datei liest der Import auch einen QR-Code – eine [Weitergabe](#provider-weitergeben)
+  oder eine [WebDAV-Freigabe](#freigaben-im-wlan) vom anderen Handy. Mit der Kamera (die Erlaubnis fragt die App erst
+  hier) oder *Aus Bild lesen*, z. B. aus einem zugeschickten Bildschirmfoto.
 
 Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem Import wieder löschen.
 
@@ -138,7 +154,7 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 | Eintrag | Funktion |
 |---|---|
 | *Neu* | neuen Provider anlegen |
-| *Neustart* | App neu starten (Rückfrage abschaltbar unter *Mehr → Einstellungen → Provider → Neustart*) |
+| *Neustart* | App neu starten (Rückfrage abschaltbar unter *Mehr → Rückfragen → Neustart*) |
 | *Test* | alle Provider prüfen |
 | *rclone.conf* | Importieren oder Exportieren |
 | *Auswählen*, *Alle auswählen* | mehrere Provider auswählen |
@@ -155,7 +171,7 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 - Rückfragen von rclone (z. B. welches OneDrive-Laufwerk) stellt die App als Auswahl.
 
 **⋮ am Provider:** Bearbeiten, Neu anmelden (abgelaufene Anmeldung erneuern), Umbenennen, Löschen,
-Verbindung testen, Ordneransicht, Verschlüsselten Bereich anlegen, Papierkorb leeren.
+Verbindung testen, Ordneransicht in der App, Ordneransicht beim Teilen, Verschlüsselten Bereich anlegen, Papierkorb leeren.
 
 **Alle Provider prüfen** (*⋮ → Test* oder Statuskarte der Startseite):
 - Prüft alle Provider auf einmal, höchstens vier gleichzeitig, je Provider höchstens 60 Sekunden.
@@ -172,7 +188,7 @@ Verbindung testen, Ordneransicht, Verschlüsselten Bereich anlegen, Papierkorb l
   das war, steht nach jeder Prüfung im Protokoll („Datenverkehr der App währenddessen: … empfangen, … gesendet“).
 
 **Papierkorb leeren** (bzw. bereinigen) – nur bei Anbietern, die es können (`rclone cleanup`), mit Rückfrage
-(abschaltbar unter *Mehr → Einstellungen → Provider → Papierkorb leeren*):
+(abschaltbar unter *Mehr → Rückfragen → Papierkorb leeren*):
 - *Papierkorb leeren:* Google Drive, Mega, pCloud, Box, Jottacloud, Yandex, Mail.ru, PikPak, Proton Drive, put.io,
   Terabox, Filen, Seafile, Huawei Drive, FileFabric. Google Drive leert im Hintergrund (Minuten bis Tage).
 - *Papierkorb leeren bei WebDAV auf Nextcloud*, z. B. Telekom MagentaCLOUD (Adresse mit `/remote.php/`):
@@ -218,9 +234,13 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 *Provider → Provider antippen*
 
 - **Navigation:** Ordner durchsuchen mit Pfadleiste („Brotkrumen“), Aktualisieren, neuer Ordner.
+  Ein Provider öffnet sich im obersten Ordner; mit *Mehr → Dateien und Ordner → Ordneransicht in der App* im
+  zuletzt in der App geöffneten Ordner (je Provider getrennt, je Provider abweichend einstellbar unter
+  *Providerliste → ⋮ am Provider → Ordneransicht in der App*). Unabhängig von der Ordneransicht beim Teilen.
+  Gibt es den gemerkten Ordner nicht mehr, beginnt die Ansicht im obersten Ordner.
   Liegt ein verschlüsselter Bereich (oder eine andere Hülle) in einem Ordner, steht dieser neben dem Provider,
   z. B. „Telekom_enc: in Telekom:Verschlüsselt“; nutzt er den ganzen Speicher („Telekom:“), steht dort nichts.
-- **Vorschaubilder** für Bilder und Videos, einstellbar unter *Mehr → Einstellungen → Provider → Vorschaubilder*: aus, nur im WLAN oder immer.
+- **Vorschaubilder** für Bilder und Videos, einstellbar unter *Mehr → Dateien und Ordner → Vorschaubilder*: aus, nur im WLAN oder immer.
 - **Hochladen** (eine oder mehrere Dateien), **Herunterladen** von Dateien oder ganzen Ordnern.
   Vor dem Herunterladen zeigt ein Dialog das Ziel: Standard ist `Download/ZClone`, *Ordner ändern* wählt über die
   Android-Ordnerauswahl einen anderen (auch SD-Karte oder USB-Stick). Der gewählte Ordner wird beim nächsten Mal
@@ -254,7 +274,7 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 ### Im Android-Dateimanager
 
-*Mehr → Einstellungen → Provider → Im Android-Dateimanager anzeigen*
+*Mehr → Dateien und Ordner → Im Android-Dateimanager anzeigen*
 
 - Die Provider erscheinen in der App „Dateien“ und in der Dateiauswahl anderer Apps.
 - So lassen sich Dateien direkt aus anderen Apps öffnen, speichern und hochladen.
@@ -272,7 +292,7 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 ### Freigaben im WLAN
 
-*Startseite → Symbol „Freigaben und Streaming“*, *Mehr → Einstellungen → Extras → Freigaben und Streaming* oder das
+*Startseite → Symbol „Freigaben und Streaming“*, *Mehr → Erweitert → Freigaben und Streaming* oder das
 Freigabe-Symbol in der Dateiliste (gibt den angezeigten Ordner frei)
 
 Stellt einen Provider-Ordner für andere Geräte im selben WLAN bereit:
@@ -290,6 +310,10 @@ Stellt einen Provider-Ordner für andere Geräte im selben WLAN bereit:
   Eine Benachrichtigung zeigt sie an und hat die Taste *Alle beenden*. Das kostet Akku.
 - DLNA hat keine Anmeldung: Jedes Gerät im WLAN sieht die Dateien. Nur in vertrauenswürdigen Netzen verwenden.
 - Lädt jemand per WebDAV oder FTP etwas hoch, landet es sofort beim Provider. Beim Beenden der Freigabe geht so nichts verloren.
+- **Als Provider auf anderem Handy:** Bei einer laufenden WebDAV-Freigabe zeigt das QR-Symbol einen QR-Code. Scannt
+  ein anderes Handy mit ZClone Provider ihn im selben WLAN (*Provider → ⋮ → rclone.conf → Importieren → QR-Code scannen*),
+  kommt dort ein WebDAV-Provider „<Provider> WLAN“ mit Adresse und Anmeldung dazu. Er funktioniert nur, solange die
+  Freigabe läuft; bei *nur lesen* lässt sich darüber auch nur lesen.
 
 ### iPhone und iPad
 
@@ -313,11 +337,14 @@ Teilabruf (Vorspulen), Umbenennen, Verschieben, Kopieren, Löschen und Sperren, 
 
 - Provider und Ordner wählen, hochladen. Bei crypt-Providern wird **verschlüsselt** gespeichert.
 - Nach dem Antippen eines Providers beginnt die Ordnerauswahl im obersten Ordner.
-  Mit *Mehr → Einstellungen → Provider → Ordneransicht* beginnt sie stattdessen in dem Ordner,
-  in den zuletzt zu diesem Provider hochgeladen wurde (je Provider getrennt).
-- Je Provider lässt sich das abweichend festlegen: *Providerliste → ⋮ am Provider → Ordneransicht* –
+  Mit *Mehr → Dateien und Ordner → Ordneransicht beim Teilen* beginnt sie stattdessen in dem Ordner,
+  in den zuletzt zu diesem Provider hochgeladen wurde (je Provider getrennt, unabhängig von der Ordneransicht in der App).
+- Je Provider lässt sich das abweichend festlegen: *Providerliste → ⋮ am Provider → Ordneransicht beim Teilen* –
   wie in den Einstellungen, immer merken oder immer im obersten Ordner beginnen.
 - Neue Ordner lassen sich direkt beim Hochladen anlegen.
+- Teilst du eine **rclone.conf** (z. B. eine Weitergabe, die per Quick Share oder Bluetooth ankam), erkennt die App
+  sie und bietet **Provider importieren** an: Das öffnet gleich den Import, ohne die Datei hochzuladen.
+  **Speichern** legt sie stattdessen unverändert an einem Ort deiner Wahl ab.
 
 ### Aufträge (automatische Synchronisation)
 
@@ -361,7 +388,8 @@ Die Bedingungen gelten für automatische Läufe und Auslöser, nicht für *Jetzt
 - **Zeitfenster** (z. B. 22:00–06:00) und **Mindest-Akkustand** (20 bis 80 %). Beim Laden gilt der Akkustand
   immer als erfüllt.
 - **Ausgelassene Läufe werden nachgeholt:** Passt eine Bedingung nicht, versucht die App es alle 15 Minuten erneut.
-- **Nicht zu oft abgleichen:** Bei *Sofort bei Änderungen* und Intervallen bis 10 Minuten weist die App darauf
+- **Nicht zu oft abgleichen:** In der Auswahl *Automatisch ausführen* steht hinter *Sofort bei Änderungen* bis
+  *Alle 10 Minuten* „(temporäre Sperre möglich)“. Ist eine davon gewählt, weist die App außerdem darauf
   hin, dass Anbieter häufige Abgleiche als zu viele Anfragen werten und den Zugang eine Zeit lang bremsen oder sperren
   können. Meldet ein Anbieter das während eines Laufs, steht vor der Fehlermeldung eine verständliche Erklärung, und das
   Protokoll vermerkt es. Erkannt werden die Texte, die rclone dafür ausgibt: HTTP 429 „Too Many Requests“ (z. B. OneDrive,
@@ -383,7 +411,7 @@ Die Bedingungen gelten für automatische Läufe und Auslöser, nicht für *Jetzt
 - Ordner, die Android nur über die Ordnerauswahl freigibt (z. B. USB-Sticks), laufen über eine Zwischenkopie
   im App-Speicher.
 - Mit **Root** lassen sich auch Ordner nutzen, die Android Apps sonst verwehrt (z. B. unter `/data`).
-  Dafür *Mehr → Einstellungen → Extras → Root-Zugriff* einschalten und den Ordner im Auftrag über *Ordner durchsuchen (Root)* wählen.
+  Dafür *Mehr → Erweitert → Root-Zugriff* einschalten und den Ordner im Auftrag über *Ordner durchsuchen (Root)* wählen.
 
 **Ergebnis**
 
@@ -410,7 +438,7 @@ Seiten gelöscht) oder übernimmst alle automatischen Entscheidungen auf einmal.
 
 ### Steuerung durch andere Apps (Tasker)
 
-*Mehr → Einstellungen → Extras → Steuerung durch andere Apps*
+*Mehr → Erweitert → Steuerung durch andere Apps*
 
 Ist das eingeschaltet, können andere Apps (z. B. Tasker) Aufträge starten und abbrechen, per Broadcast-Intent:
 
@@ -430,7 +458,9 @@ Ausblenden lässt es sich über die Benachrichtigungseinstellungen der App (Kana
 
 ### App-Sperre und Verschlüsselung
 
-*Mehr → Sicherheit → App-Sperre*
+*Mehr → Sicherheit* – eine Seite mit den Abschnitten **App-Sperre**, **Bestätigung** und **Weitergeben und Sichern**.
+Sperren geht auch über *Startseite → Ausschalten oder Neustart → Jetzt sperren*. Dann erscheint gleich der
+Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn du *Mit Fingerabdruck* antippst.
 
 - Beim Öffnen der App, auch beim Teilen, entsperrst du mit **Fingerabdruck** oder **App-Passwort**.
 - **Sperrzeit wählbar:** sofort, nach 30 Sekunden, nach 1, 5 oder 15 Minuten, nach 1 Stunde oder
@@ -440,7 +470,7 @@ Ausblenden lässt es sich über die Benachrichtigungseinstellungen der App (Kana
 - *Passwort ändern* verschlüsselt neu, *Ausschalten* entschlüsselt wieder.
 - **Schutz gegen Durchprobieren:** Ab dem 5. falschen Passwort wird die Wartezeit immer länger.
 - Aufträge und Freigaben laufen bei gesperrter App weiter.
-- **Passwort vergessen?** Auf dem Sperrbildschirm oder unter *Mehr → Sicherheit → App-Sperre*:
+- **Passwort vergessen?** Auf dem Sperrbildschirm oder unter *Mehr → Sicherheit*:
   - Mit **Fingerabdruck oder der Displaysperre des Handys** (PIN, Muster, Passwort) bestätigen, dann ein
     neues App-Passwort wählen.
   - Die `rclone.conf` wird damit neu verschlüsselt, Provider und Aufträge bleiben erhalten.
@@ -453,6 +483,14 @@ Ausblenden lässt es sich über die Benachrichtigungseinstellungen der App (Kana
   - Bis dahin startet rclone nicht und meldet verständlich, warum. Das Protokoll hält den Zustand des
     Keystores fest (Schlüssel vorhanden, Erzeugungsdatum, Sicherheitsstufe).
 
+**Bestätigung vor sensiblen Aktionen** (Abschnitt *Bestätigung*):
+
+- **Vor dem Weitergeben** von Providern (Standard an, abschaltbar).
+- **Vor dem unverschlüsselten Export** (immer, nur mit App-Sperre wählbar).
+- Mit App-Sperre bestätigst du mit **Fingerabdruck oder App-Passwort** (*Passwort verwenden*), ohne App-Sperre mit
+  der **Displaysperre des Handys** (PIN, Muster, Passwort oder Fingerabdruck). Ist keins von beidem eingerichtet,
+  weist die App darauf hin und gibt nichts weiter. Fehlversuche zählen wie beim Entsperren.
+
 ### rclone.conf exportieren
 
 *Mehr → Sicherheit → rclone.conf exportieren* oder *Provider → ⋮ → rclone.conf → Exportieren*
@@ -460,8 +498,11 @@ Ausblenden lässt es sich über die Benachrichtigungseinstellungen der App (Kana
 - **Ohne App-Sperre:** speichert die Konfiguration unverschlüsselt an einem Ort deiner Wahl.
 - **Mit App-Sperre** wählst du:
   - **Verschlüsselt:** wie in der App gespeichert, lesbar nur mit dem App-Passwort.
-  - **Unverschlüsselt:** erst nach Eingabe des App-Passworts. Entschlüsselt wird nur im Arbeitsspeicher,
+  - **Unverschlüsselt:** erst nach Bestätigung mit Fingerabdruck oder App-Passwort. Entschlüsselt wird nur im Arbeitsspeicher,
     die `rclone.conf` in der App bleibt verschlüsselt.
+- Danach wählst du **Speichern** (Ort deiner Wahl) oder **Senden** (Teilen-Menü von Android, z. B. Quick Share,
+  Bluetooth, Messenger). Unverschlüsselt enthält sie alle Zugangsdaten lesbar – nur an dich selbst oder Vertraute
+  senden. Die Kopie für das Senden liegt im privaten Speicher der App und wird beim nächsten Start gelöscht.
 
 Eine verschlüsselte `rclone.conf` lässt sich so lesen:
 - **rclone** am PC: `"C:\ZClone\Programme\Rclone\rclone.exe" config show --config "D:\rclone.conf"`.
@@ -470,9 +511,37 @@ Eine verschlüsselte `rclone.conf` lässt sich so lesen:
   `Konfiguration\Rclone\rclone.conf` abgelegt ist. Achtung: Das ersetzt die PC-Konfiguration.
 - **Import dieser App** auf einem anderen Handy.
 
+### Provider weitergeben
+
+*Provider → lange auf einen Provider drücken (oder ⋮ → Auswählen) → ⋮ → Weitergeben*, oder
+*Mehr → Sicherheit → Provider weitergeben* (öffnet die Providerliste gleich im Auswahlmodus)
+
+Damit zwei Personen über denselben Provider verschlüsselte Daten austauschen, gibst du einzelne Provider als eigene
+`rclone.conf` weiter:
+
+- **Auswahl samt Abhängigkeiten:** Was ein gewählter Provider braucht, kommt automatisch mit und wird im Dialog
+  genannt (z. B. `Mega_enc` braucht `Mega`). Alle anderen Provider bleiben auf deinem Handy.
+- **Bestätigung vorher** (abschaltbar unter *Mehr → Sicherheit → Bestätigung*): mit Fingerabdruck oder App-Passwort,
+  ohne App-Sperre mit der Displaysperre des Handys.
+- **Eigenes Weitergabe-Passwort** (mindestens 8 Zeichen, zweimal eingeben): Die Datei wird damit verschlüsselt, nicht
+  mit dem App-Passwort. Teile es der anderen Person getrennt von der Datei mit (z. B. mündlich).
+- **Speichern, Senden oder QR-Code:** *Speichern* legt die Datei an einem gewählten Ort ab. *Senden* öffnet das
+  Teilen-Menü von Android – z. B. **Quick Share**, **Bluetooth**, Messenger oder E-Mail. *QR-Code* zeigt die
+  verschlüsselte Datei als QR-Code zum Abscannen (bei sehr vielen Providern zu groß – dann Senden oder Speichern).
+- **Empfänger:** Kommt die Datei per Teilen an, *Teilen → ZClone Provider → Provider importieren*; beim QR-Code
+  *Provider → ⋮ → rclone.conf → Importieren → QR-Code scannen*; sonst *Provider → ⋮ → rclone.conf → Importieren*.
+  Dann Weitergabe-Passwort eingeben, Provider übernehmen.
+  Hat er schon einen gleichnamigen Provider (z. B. ein eigenes `Mega`), kommt der weitergegebene als `Mega 2` dazu
+  und `Mega_enc` zeigt darauf; seine eigenen Provider bleiben unverändert.
+- **Achtung:** Wer Datei und Passwort hat, hat vollen Zugriff auf die Konten der weitergegebenen Provider – lesen,
+  ändern, löschen – und kann alle verschlüsselten Daten darin entschlüsseln. Darauf weist auch der Dialog hin.
+- Deine eigene `rclone.conf` bleibt dabei unverändert; das Passwort erscheint nie im Protokoll.
+- Den Ordner nur mit einem anderen Konto teilen (ohne deine Zugangsdaten weiterzugeben) unterstützt rclone bei
+  Mega und Terabox nicht.
+
 ### Updates
 
-*Mehr → Über → Nach Updates suchen*, außerdem beim Start höchstens einmal täglich (abschaltbar).
+*Mehr → Updates → Nach Updates suchen*, außerdem beim Start höchstens einmal täglich (abschaltbar).
 Gilt für die Version von GitHub; die Version aus Google Play wird über Play aktualisiert.
 
 - Sucht neue Versionen in den Releases auf **zclone-provider-beta** und lädt die **zum Gerät passende APK**.
@@ -481,9 +550,9 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
   für die App erlaubt werden.
 - Provider, Aufträge und Einstellungen bleiben bei Updates erhalten.
 
-### Individualisierung
+### Darstellung
 
-*Mehr → Individualisierung*
+*Mehr → Darstellung*
 
 - **Sprache / Language:** Die Auswahl zeigt zuerst *Wie das Handy (System)*, dann die zwölf Sprachen alphabetisch
   nach ihrem Eigennamen. Bei einer Handysprache, die die App nicht kennt, erscheint sie auf Englisch.
@@ -492,33 +561,43 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
 
 ### Weitere Seiten unter „Mehr“
 
-Reihenfolge: Einstellungen, Sicherheit, Individualisierung, Hilfe, Über und – nur in der Version von GitHub –
-Sponsor.
+Eine Seite mit drei Überschriften; jede Unterseite ist einen Schritt entfernt und enthält nur, was ihr Name sagt.
+Unter jedem Eintrag steht kurz der Zustand (z. B. „App-Sperre an“, „Protokoll aus“).
 
-- **Einstellungen:**
-  - **Android:**
-    - Zugriff auf alle Dateien (nötig für Aufträge)
-    - Benachrichtigungen (öffnet die Android-Einstellungen der App, je Kanal mit Ton und Sperrbildschirm)
-    - Akku-Optimierung
-  - **Provider:**
-    - Ordneransicht: Teilen beginnt im obersten Ordner oder im zuletzt genutzten (je Provider abweichend einstellbar)
-    - Papierkorb leeren: vor dem Leeren des Papierkorbs bzw. Löschen alter Versionen oder Uploads nachfragen
-    - Neustart: vor dem Neustart der App nachfragen (Startseite oben und *Provider → ⋮ → Neustart*)
-    - Im Android-Dateimanager anzeigen
-    - Vorschaubilder
-  - **Extras:**
-    - Root-Zugriff
-    - Steuerung durch andere Apps
-    - Freigaben und Streaming
-  - **Protokoll:**
-    - Mitschreiben an oder aus. Ausgeschaltet wird gar nichts mehr protokolliert, auch keine Fehler.
-    - Höchstgröße und Aufbewahrungszeit sind einstellbar. Die Höchstgröße gilt genau für die eine Protokolldatei;
-      ist sie voll, werden die ältesten Einträge überschrieben, die neuesten bleiben erhalten.
-    - Einträge ansehen, teilen, exportieren oder leeren.
-    - Zugangsdaten erscheinen nie im Protokoll.
-    - Zur Fehlersuche hält es auch fest, wie Android die App im Hintergrund behandelt: Planung der Aufträge,
-      Standby-Gruppe, Akku-Optimierung, Prozess-Beendigungen und Abbruchgründe.
-- **Sicherheit:** [App-Sperre](#app-sperre-und-verschlüsselung) und [rclone.conf exportieren](#rcloneconf-exportieren).
+| Abschnitt | Eintrag | Inhalt |
+|---|---|---|
+| **Einstellungen** | Dateien und Ordner | Ordneransicht in der App, Ordneransicht beim Teilen, Im Android-Dateimanager anzeigen, Vorschaubilder |
+| | Rückfragen | Papierkorb leeren, Neustart, Ausschalten |
+| | Darstellung | Sprache, schwebende Leiste |
+| | Updates | Nach Updates suchen, Beim Start nach Updates suchen (nur Version von GitHub) |
+| **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort |
+| | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, rclone.conf exportieren, Provider weitergeben |
+| | Erweitert | Freigaben und Streaming, Steuerung durch andere Apps, Root-Zugriff |
+| | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
+| **Info** | Hilfe | Erste Schritte, Telegram |
+| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Version |
+| | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
+
+- **Dateien und Ordner:**
+  - Ordneransicht in der App: Provider öffnen sich im obersten Ordner oder im zuletzt geöffneten (je Provider abweichend einstellbar)
+  - Ordneransicht beim Teilen: Teilen beginnt im obersten Ordner oder im zuletzt genutzten (je Provider abweichend einstellbar)
+  - Im Android-Dateimanager anzeigen, Vorschaubilder
+- **Rückfragen:**
+  - Papierkorb leeren: vor dem Leeren des Papierkorbs bzw. Löschen alter Versionen oder Uploads nachfragen
+  - Neustart: vor dem Neustart der App nachfragen (*Startseite → Ausschalten oder Neustart → Neustart* und *Provider → ⋮ → Neustart*)
+  - Ausschalten: vor dem kompletten Beenden der App nachfragen (*Startseite → Ausschalten oder Neustart → Ausschalten*)
+- **Android:** Zugriff auf alle Dateien (nötig für Aufträge), Benachrichtigungen (öffnet die Android-Einstellungen der App,
+  je Kanal mit Ton und Sperrbildschirm), Akku-Optimierung.
+- **Sicherheit:** [App-Sperre und Bestätigung](#app-sperre-und-verschlüsselung), [rclone.conf exportieren](#rcloneconf-exportieren)
+  und [Provider weitergeben](#provider-weitergeben).
+- **Protokoll:**
+  - Mitschreiben an oder aus. Ausgeschaltet wird gar nichts mehr protokolliert, auch keine Fehler.
+  - Höchstgröße und Aufbewahrungszeit sind einstellbar. Die Höchstgröße gilt genau für die eine Protokolldatei;
+    ist sie voll, werden die ältesten Einträge überschrieben, die neuesten bleiben erhalten.
+  - Einträge ansehen, teilen, exportieren oder leeren.
+  - Zugangsdaten erscheinen nie im Protokoll.
+  - Zur Fehlersuche hält es auch fest, wie Android die App im Hintergrund behandelt: Planung der Aufträge,
+    Standby-Gruppe, Akku-Optimierung, Prozess-Beendigungen und Abbruchgründe.
 - **Hilfe:**
   - *Erste Schritte:* Hinweis, dass zuerst ein Provider eingerichtet werden muss, erste Schritte (Fragezeichen beim
     Einrichten öffnet die rclone-Beschreibung des Anbieters), ein Beispiel: Mega einrichten und verschlüsselt sichern,
@@ -526,13 +605,8 @@ Sponsor.
     höchstens etwa 143 Zeichen für verschlüsselte Dateinamen – nach der rclone-Dokumentation zu crypt) und
     „Wie oft synchronisieren?“ (zu häufige Abgleiche können Anbieter bremsen oder sperren lassen).
   - *Telegram:* Fragen, Probleme, Vorschläge.
-- **Über:**
-  - Updates
-  - Lizenzen (alle Bestandteile mit vollständigem Lizenztext)
-  - Datenschutz
-  - Projektseite von ZClone auf GitHub
-  - Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub
-- **Sponsor:** Unterstützung der Entwicklung.
+- **Über:** Lizenzen (alle Bestandteile mit vollständigem Lizenztext), Datenschutz, Projektseite von ZClone auf GitHub,
+  Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub.
 
 ---
 
@@ -547,15 +621,16 @@ Sponsor.
 | Wach halten | Freigaben antworten auch bei ausgeschaltetem Bildschirm |
 | Nach dem Neustart starten | Statussymbol, Ordnerüberwachung und Weckzeiten nach einem Neustart wiederherstellen |
 | Exakte Weckzeiten | Aufträge zu einer festen Uhrzeit (ab Android 14 vom Nutzer zu erlauben, sonst etwas später) |
-| Akku-Optimierung ausnehmen | nur auf Wunsch über *Mehr → Einstellungen → Android* |
+| Akku-Optimierung ausnehmen | nur auf Wunsch über *Mehr → Android* |
 | Standort (auch im Hintergrund) | nur für „nur in WLAN X“ und den Auslöser „bei WLAN X“: Android gibt den WLAN-Namen nur mit Standortberechtigung heraus. Die App fragt erst danach, wenn ein WLAN-Name genutzt wird, und wertet den Standort selbst nicht aus. |
 | WLAN-Status, Multicast | DLNA: damit Fernseher den Medienserver finden |
 | Apps installieren | Updates aus der App heraus (Android fragt jedes Mal nach) |
 | Fingerabdruck | App-Sperre |
+| Kamera | nur zum Einlesen eines QR-Codes (wird erst beim Scannen gefragt; ohne sie: aus einem Bild lesen). Bilder werden nicht gespeichert. |
 
 **Version aus Google Play:** ohne *Apps installieren* (Updates über Play), ohne *Standort* – die Bedingung
 „nur in WLAN X“ und der Auslöser „bei WLAN X“ entfallen dort, „nur im WLAN“ und „bei WLAN-Verbindung“ bleiben –
-und ohne die direkte Anfrage zur Akku-Optimierung: *Mehr → Einstellungen → Android → Akku-Optimierung* öffnet die Liste von Android,
+und ohne die direkte Anfrage zur Akku-Optimierung: *Mehr → Android → Akku-Optimierung* öffnet die Liste von Android,
 in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
 
 ---
@@ -626,9 +701,10 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
   gebaut (16-KB-Ausrichtung; die Bauanleitung liegt der App bei) und als eigenes Programm (`librclone.so`)
   mitgeliefert.
 - **Alle enthaltenen Bibliotheken** mit Version, Lizenz, Link und vollständigem Lizenztext:
-  - die 242 Go-Bibliotheken in rclone (MIT, Apache 2.0, BSD, MPL 2.0, ISC, CC0 und eine unter LGPL 3.0),
+  - die 242 Go-Bibliotheken in rclone (MIT, Apache 2.0, BSD, MPL 2.0, ISC, CC0 und eine unter LGPL 3.0 –
+    `github.com/cloudsoda/sddl`, mit GPL-3-Text und Hinweis auf Quellcode und Bauanleitung),
   - Go selbst (Standardbibliothek und Laufzeit, BSD-3-Clause),
-  - die 119 Android-Bibliotheken (AndroidX, Compose, Kotlin, kotlinx.coroutines u. a., alle Apache 2.0).
+  - die 127 Android-Bibliotheken (AndroidX, Compose, CameraX, Kotlin, kotlinx.coroutines, ZXing u. a., alle Apache 2.0).
 
 Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
 
@@ -649,7 +725,10 @@ Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
   and folders, even across providers. Providers can also appear in Android's *Files* app.
 - **Streaming:** play videos and music straight from the provider without downloading them first.
 - **Shares:** serve a folder on Wi-Fi via **WebDAV, HTTP, FTP or DLNA** – also usable from an iPhone/iPad
-  (Safari for HTTP, a WebDAV app that integrates with Files, VLC for DLNA).
+  (Safari for HTTP, a WebDAV app that integrates with Files, VLC for DLNA); a WebDAV share can be shown as a QR code
+  that adds it as a provider on another phone.
+- **Pass on providers:** selected providers as an encrypted `rclone.conf` – save, send (Quick Share, Bluetooth …)
+  or show as a QR code; the import reads files, shared files and QR codes.
 - **Share target:** upload from any app, encrypted when the target is a crypt provider; starts at the top folder
   (optionally the last folder per provider).
 - **Jobs:**
