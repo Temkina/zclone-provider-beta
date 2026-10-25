@@ -142,17 +142,17 @@ Die App öffnet immer mit der Startseite.
 
 - Liest eine `rclone.conf` von rclone oder von ZClone am PC – das Format ist dasselbe. Bei rclone zeigt
   `rclone config file`, wo sie liegt; bei ZClone liegt sie in `Konfiguration\Rclone`.
-- Du wählst **einzelne Provider** aus, nicht zwingend alle.
+- Sie wählen **einzelne Provider** aus, nicht zwingend alle.
 - **Abhängigkeiten** kommen automatisch mit. Wer einen crypt-Provider wählt, bekommt den Provider darunter dazu.
 - **Mit Passwort verschlüsselte `rclone.conf`** werden unterstützt: Passwort eingeben, „Entschlüsseln“, dann auswählen.
-- **Deine vorhandenen Provider bleiben erhalten:** Der Import ergänzt nur, er ersetzt nicht die ganze `rclone.conf`.
-- Gibt es einen Provider schon, wählst du **behalten**, **ersetzen** oder **importierte umbenennen**:
-  - *behalten:* Dein Provider bleibt, der aus der Datei wird nicht übernommen.
-  - *ersetzen:* Der aus der Datei ersetzt deinen.
+- **Ihre vorhandenen Provider bleiben erhalten:** Der Import ergänzt nur, er ersetzt nicht die ganze `rclone.conf`.
+- Gibt es einen Provider schon, wählen Sie **behalten**, **ersetzen** oder **importierte umbenennen**:
+  - *behalten:* Ihr Provider bleibt, der aus der Datei wird nicht übernommen.
+  - *ersetzen:* Der aus der Datei ersetzt Ihren.
   - *importierte umbenennen:* Der aus der Datei kommt unter neuem Namen dazu (z. B. „Mega 2“), Verweise darauf
-    (z. B. von einem verschlüsselten Bereich) werden angepasst, deiner bleibt unverändert.
-  - Braucht ein Provider der Datei einen gleichnamigen, den du schon hast (z. B. `Mega_enc` → `Mega`), ist
-    *importierte umbenennen* vorausgewählt. Sonst zeigte `Mega_enc` auf dein eigenes Konto oder ersetzte es.
+    (z. B. von einem verschlüsselten Bereich) werden angepasst, Ihrer bleibt unverändert.
+  - Braucht ein Provider der Datei einen gleichnamigen, den Sie schon haben (z. B. `Mega_enc` → `Mega`), ist
+    *importierte umbenennen* vorausgewählt. Sonst zeigte `Mega_enc` auf Ihr eigenes Konto oder ersetzte es.
 - Fehlerhafte Zeitangaben aus älteren Konfigurationen (Nanosekunden ohne Einheit) werden beim Import korrigiert.
 - **QR-Code scannen:** Statt einer Datei liest der Import auch einen QR-Code – eine [Weitergabe](#provider-weitergeben)
   oder eine [WebDAV-Freigabe](#freigaben-im-wlan) vom anderen Handy. Mit der Kamera (die Erlaubnis fragt die App erst
@@ -178,6 +178,8 @@ der Hintergrundfarbe.
 **Neu anlegen:**
 - Alle Provider-Typen von rclone-extra stehen zur Wahl, mit Suche (z. B. „Google“, „OneDrive“, „WebDAV“).
 - Das Fragezeichen öffnet die rclone-Hilfe zum gewählten Typ.
+- Adressen in den Erklärungen unter den Feldern (z. B. bei *client_id* von Google Drive) lassen sich antippen und öffnen
+  sich im Browser.
 - Ist noch kein Provider eingerichtet, zeigt *Neuer Provider* oben einen Hinweis auf die Hilfe; auch die leere
   Providerliste verweist darauf.
 - Beim Typ pCloud steht ein als **Empfehlungslink** gekennzeichneter Hinweis „pCloud-Konto anlegen“ (nur in der
@@ -234,13 +236,13 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 *Direkt nach dem Einrichten eines neuen Providers oder über ⋮ am Provider → Verschlüsselten Bereich anlegen*
 
-- Legt zum Provider einen **crypt-Provider** an. Was du dorthin hochlädst, liegt beim Anbieter verschlüsselt,
+- Legt zum Provider einen **crypt-Provider** an. Was Sie dorthin hochladen, liegt beim Anbieter verschlüsselt,
   auch die Datei- und Ordnernamen.
-- Vorbelegt sind der Name `<Provider>_enc` und ein Ordner beim Provider. Du wählst das Passwort,
+- Vorbelegt sind der Name `<Provider>_enc` und ein Ordner beim Provider. Sie wählen das Passwort,
   ein zufälliger Salt wird auf Wunsch dazu erzeugt. Der Ordner wird beim Anbieter angelegt.
 - **Wichtig:** Ohne dieses Passwort und ohne die `rclone.conf` lassen sich die Daten nicht mehr entschlüsseln.
   Danach die `rclone.conf` sichern.
-- Wählst du bei einem Auftrag oder beim Teilen einen unverschlüsselten Provider, zu dem es einen verschlüsselten
+- Wählen Sie bei einem Auftrag oder beim Teilen einen unverschlüsselten Provider, zu dem es einen verschlüsselten
   gibt, schlägt die App einmal den verschlüsselten vor. Wer „unverschlüsselt bleiben“ wählt, wird für diesen
   Provider nicht wieder gefragt.
 - Die Einstellungen sind normales rclone-Format und funktionieren genauso in ZClone am PC.
@@ -300,7 +302,7 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 *Video- oder Musikdatei antippen*
 
-- Spielt direkt vom Provider ab, in einem Player deiner Wahl (z. B. VLC), **ohne vorher die ganze Datei zu laden**.
+- Spielt direkt vom Provider ab, in einem Player Ihrer Wahl (z. B. VLC), **ohne vorher die ganze Datei zu laden**.
   Vorspulen funktioniert. Auch verschlüsselte Dateien von crypt-Providern lassen sich streamen.
 - Technik: ein kleiner rclone-HTTP-Server, **nur auf diesem Handy erreichbar**, schreibgeschützt und mit
   einem zufälligen, geheimen Pfad.
@@ -322,7 +324,7 @@ Stellt einen Provider-Ordner für andere Geräte im selben WLAN bereit:
 
 - Die App zeigt die Adresse(n) an (z. B. `http://192.168.1.20:8081/`) samt Zugangsdaten, mit Taste zum Kopieren.
 - Das Passwort wird zufällig erzeugt und lässt sich ändern.
-- Freigaben laufen weiter, bis du sie beendest, auch bei gesperrter App und ausgeschaltetem Bildschirm.
+- Freigaben laufen weiter, bis Sie sie beenden, auch bei gesperrter App und ausgeschaltetem Bildschirm.
   Eine Benachrichtigung zeigt sie an und hat die Taste *Alle beenden*. Das kostet Akku.
 - DLNA hat keine Anmeldung: Jedes Gerät im WLAN sieht die Dateien. Nur in vertrauenswürdigen Netzen verwenden.
 - Lädt jemand per WebDAV oder FTP etwas hoch, landet es sofort beim Provider. Beim Beenden der Freigabe geht so nichts verloren.
@@ -358,9 +360,9 @@ Teilabruf (Vorspulen), Umbenennen, Verschieben, Kopieren, Löschen und Sperren, 
 - Je Provider lässt sich das abweichend festlegen: *Providerliste → ⋮ am Provider → Ordneransicht beim Teilen* –
   wie in den Einstellungen, immer merken oder immer im obersten Ordner beginnen.
 - Neue Ordner lassen sich direkt beim Hochladen anlegen.
-- Teilst du eine **rclone.conf** (z. B. eine Weitergabe, die per Quick Share oder Bluetooth ankam), erkennt die App
+- Teilen Sie eine **rclone.conf** (z. B. eine Weitergabe, die per Quick Share oder Bluetooth ankam), erkennt die App
   sie und bietet **Provider importieren** an: Das öffnet gleich den Import, ohne die Datei hochzuladen.
-  **Speichern** legt sie stattdessen unverändert an einem Ort deiner Wahl ab.
+  **Speichern** legt sie stattdessen unverändert an einem Ort Ihrer Wahl ab.
 
 ### Aufträge (automatische Synchronisation)
 
@@ -449,7 +451,7 @@ Die andere Version bleibt dabei erhalten: Sie liegt auf beiden Seiten unter eine
 `.provider` (z. B. `Foto.handy1.jpg`).
 
 Gefundene Konflikte meldet die App per Benachrichtigung und an der Auftragskarte. Auf der **Konfliktseite**
-siehst du beide Versionen mit Vorschau, Größe und Datum. Dort behältst du eine davon (die andere wird auf beiden
+sehen Sie beide Versionen mit Vorschau, Größe und Datum. Dort behalten Sie eine davon (die andere wird auf beiden
 Seiten gelöscht) oder übernimmst alle automatischen Entscheidungen auf einmal.
 
 ### Steuerung durch andere Apps (Tasker)
@@ -476,9 +478,9 @@ Ausblenden lässt es sich über die Benachrichtigungseinstellungen der App (Kana
 
 *Mehr → Sicherheit* – eine Seite mit den Abschnitten **App-Sperre**, **Bestätigung** und **Weitergeben und Sichern**.
 Sperren geht auch über *Startseite → Ausschalten oder Neustart → Jetzt sperren*. Dann erscheint gleich der
-Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn du *Mit Fingerabdruck* antippst.
+Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn Sie *Mit Fingerabdruck* antippen.
 
-- Beim Öffnen der App, auch beim Teilen, entsperrst du mit **Fingerabdruck** oder **App-Passwort**.
+- Beim Öffnen der App, auch beim Teilen, entsperren Sie mit **Fingerabdruck** oder **App-Passwort**.
 - **Sperrzeit wählbar:** sofort, nach 30 Sekunden, nach 1, 5 oder 15 Minuten, nach 1 Stunde oder
   nur nach einem Neustart des Handys.
 - Mit dem Einschalten wird die **`rclone.conf` mit dem App-Passwort verschlüsselt**. Das geschieht im
@@ -503,7 +505,7 @@ Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn du *Mit Fingerabdruc
 
 - **Vor dem Weitergeben** von Providern (Standard an, abschaltbar).
 - **Vor dem unverschlüsselten Export** (immer, nur mit App-Sperre wählbar).
-- Mit App-Sperre bestätigst du mit **Fingerabdruck oder App-Passwort** (*Passwort verwenden*), ohne App-Sperre mit
+- Mit App-Sperre bestätigen Sie mit **Fingerabdruck oder App-Passwort** (*Passwort verwenden*), ohne App-Sperre mit
   der **Displaysperre des Handys** (PIN, Muster, Passwort oder Fingerabdruck). Ist keins von beidem eingerichtet,
   weist die App darauf hin und gibt nichts weiter. Fehlversuche zählen wie beim Entsperren.
 
@@ -511,13 +513,13 @@ Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn du *Mit Fingerabdruc
 
 *Mehr → Sicherheit → rclone.conf exportieren* oder *Provider → ⋮ → rclone.conf → Exportieren*
 
-- **Ohne App-Sperre:** speichert die Konfiguration unverschlüsselt an einem Ort deiner Wahl.
-- **Mit App-Sperre** wählst du:
+- **Ohne App-Sperre:** speichert die Konfiguration unverschlüsselt an einem Ort Ihrer Wahl.
+- **Mit App-Sperre** wählen Sie:
   - **Verschlüsselt:** wie in der App gespeichert, lesbar nur mit dem App-Passwort.
   - **Unverschlüsselt:** erst nach Bestätigung mit Fingerabdruck oder App-Passwort. Entschlüsselt wird nur im Arbeitsspeicher,
     die `rclone.conf` in der App bleibt verschlüsselt.
-- Danach wählst du **Speichern** (Ort deiner Wahl) oder **Senden** (Teilen-Menü von Android, z. B. Quick Share,
-  Bluetooth, Messenger). Unverschlüsselt enthält sie alle Zugangsdaten lesbar – nur an dich selbst oder Vertraute
+- Danach wählen Sie **Speichern** (Ort Ihrer Wahl) oder **Senden** (Teilen-Menü von Android, z. B. Quick Share,
+  Bluetooth, Messenger). Unverschlüsselt enthält sie alle Zugangsdaten lesbar – nur an sich selbst oder Vertraute
   senden. Die Kopie für das Senden liegt im privaten Speicher der App und wird beim nächsten Start gelöscht.
 
 Eine verschlüsselte `rclone.conf` lässt sich so lesen:
@@ -532,15 +534,15 @@ Eine verschlüsselte `rclone.conf` lässt sich so lesen:
 *Provider → lange auf einen Provider drücken (oder ⋮ → Auswählen) → ⋮ → Weitergeben*, oder
 *Mehr → Sicherheit → Provider weitergeben* (öffnet die Providerliste gleich im Auswahlmodus)
 
-Damit zwei Personen über denselben Provider verschlüsselte Daten austauschen, gibst du einzelne Provider als eigene
+Damit zwei Personen über denselben Provider verschlüsselte Daten austauschen, geben Sie einzelne Provider als eigene
 `rclone.conf` weiter:
 
 - **Auswahl samt Abhängigkeiten:** Was ein gewählter Provider braucht, kommt automatisch mit und wird im Dialog
-  genannt (z. B. `Mega_enc` braucht `Mega`). Alle anderen Provider bleiben auf deinem Handy.
+  genannt (z. B. `Mega_enc` braucht `Mega`). Alle anderen Provider bleiben auf Ihrem Handy.
 - **Bestätigung vorher** (abschaltbar unter *Mehr → Sicherheit → Bestätigung*): mit Fingerabdruck oder App-Passwort,
   ohne App-Sperre mit der Displaysperre des Handys.
 - **Eigenes Weitergabe-Passwort** (mindestens 8 Zeichen, zweimal eingeben): Die Datei wird damit verschlüsselt, nicht
-  mit dem App-Passwort. Teile es der anderen Person getrennt von der Datei mit (z. B. mündlich).
+  mit dem App-Passwort. Teilen Sie es der anderen Person getrennt von der Datei mit (z. B. mündlich).
 - **Speichern, Senden oder QR-Code:** *Speichern* legt die Datei an einem gewählten Ort ab. *Senden* öffnet das
   Teilen-Menü von Android – z. B. **Quick Share**, **Bluetooth**, Messenger oder E-Mail. *QR-Code* zeigt die
   verschlüsselte Datei als QR-Code zum Abscannen (bei sehr vielen Providern zu groß – dann Senden oder Speichern).
@@ -551,8 +553,8 @@ Damit zwei Personen über denselben Provider verschlüsselte Daten austauschen, 
   und `Mega_enc` zeigt darauf; seine eigenen Provider bleiben unverändert.
 - **Achtung:** Wer Datei und Passwort hat, hat vollen Zugriff auf die Konten der weitergegebenen Provider – lesen,
   ändern, löschen – und kann alle verschlüsselten Daten darin entschlüsseln. Darauf weist auch der Dialog hin.
-- Deine eigene `rclone.conf` bleibt dabei unverändert; das Passwort erscheint nie im Protokoll.
-- Den Ordner nur mit einem anderen Konto teilen (ohne deine Zugangsdaten weiterzugeben) unterstützt rclone bei
+- Ihre eigene `rclone.conf` bleibt dabei unverändert; das Passwort erscheint nie im Protokoll.
+- Den Ordner nur mit einem anderen Konto teilen (ohne Ihre Zugangsdaten weiterzugeben) unterstützt rclone bei
   Mega und Terabox nicht.
 
 ### Updates
@@ -661,7 +663,7 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
 ## Datenschutz und Sicherheit
 
 - **Keine Konten, keine Statistik.** Die App spricht nur mit
-  - deinen Providern,
+  - Ihren Providern,
   - `api.github.com` und `github.com`, nur für die Update-Suche und den Download,
   - `graph.microsoft.com`, nur beim Einrichten von OneDrive, um das richtige Laufwerk zu finden.
 - **Zugangsdaten** liegen ausschließlich im privaten Speicher der App, für andere Apps unlesbar.
@@ -670,7 +672,7 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
   Android-Keystore geschützt.
 - **Keine Datensicherung durch Android/Google:** Die App ist von Android-Backups ausgeschlossen, damit
   Zugangsdaten nicht in eine Cloud-Sicherung wandern. Zum Sichern dient *rclone.conf exportieren*.
-- **Protokoll:** bleibt auf dem Handy und wird nur geteilt, wenn du es selbst teilst. Passwörter und Tokens
+- **Protokoll:** bleibt auf dem Handy und wird nur geteilt, wenn Sie es selbst teilen. Passwörter und Tokens
   werden vor dem Schreiben entfernt. Es lässt sich ganz abschalten.
 - **Root** und die **Steuerung durch andere Apps** sind standardmäßig aus und werden nur auf ausdrücklichen
   Wunsch eingeschaltet.
