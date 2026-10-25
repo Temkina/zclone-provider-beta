@@ -567,8 +567,11 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
 
 ### Weitere Seiten unter „Mehr“
 
-Eine Seite mit drei Überschriften; jeder Abschnitt liegt als abgerundete Karte auf dem Hintergrund. Jede Unterseite
-ist einen Schritt entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der Zustand
+Eine Seite mit drei Überschriften; jeder Abschnitt liegt als abgerundete Karte auf dem Hintergrund, ebenso auf den
+Unterseiten (z. B. *Sicherheit* mit der Einleitung und den Karten App-Sperre, Bestätigung, Weitergeben und Sichern;
+*Datenschutz* und *Erste Schritte* mit Einleitung und je Abschnitt einer Karte; *Lizenzen* je Abschnitt eine Karte; *Sponsor* mit dem Text
+oben und einer Kachel „Direkte Zahlung“). Jede Unterseite ist einen Schritt
+entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der Zustand
 (z. B. „App-Sperre an“, „Protokoll aus“).
 
 | Abschnitt | Eintrag | Inhalt |
