@@ -22,10 +22,23 @@ WebDAV (Telekom, Nextcloud …) und verschlüsselte crypt-Provider.
 
 *English summary at the end of this file.*
 
+## Bildschirmfotos
+
+<p>
+  <img src="bilder/01-startseite.png" width="160" alt="Startseite">
+  <img src="bilder/02-provider.png" width="160" alt="Provider">
+  <img src="bilder/03-auftraege.png" width="160" alt="Aufträge">
+  <img src="bilder/04-mehr.png" width="160" alt="Mehr: Einstellungen und System">
+  <img src="bilder/05-mehr-info.png" width="160" alt="Mehr: System und Info">
+</p>
+
+Startseite, Provider, Aufträge und *Mehr* (Hintergrund Elfenbein).
+
 ---
 
 ## Inhalt
 
+- [Bildschirmfotos](#bildschirmfotos)
 - [Installation und erste Schritte](#installation-und-erste-schritte)
 - [Bedienung](#bedienung)
 - [Funktionen](#funktionen)
