@@ -149,6 +149,9 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 
 ### Provider verwalten
 
+Die Providerliste ist abwechselnd hinterlegt: der erste, dritte, fünfte … Provider in der Kartenfarbe, die übrigen in
+der Hintergrundfarbe.
+
 **⋮ oben auf der Providerliste**, jeweils mit Symbol:
 
 | Eintrag | Funktion |
@@ -564,8 +567,9 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
 
 ### Weitere Seiten unter „Mehr“
 
-Eine Seite mit drei Überschriften; jede Unterseite ist einen Schritt entfernt und enthält nur, was ihr Name sagt.
-Unter jedem Eintrag steht kurz der Zustand (z. B. „App-Sperre an“, „Protokoll aus“).
+Eine Seite mit drei Überschriften; jeder Abschnitt liegt als abgerundete Karte auf dem Hintergrund. Jede Unterseite
+ist einen Schritt entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der Zustand
+(z. B. „App-Sperre an“, „Protokoll aus“).
 
 | Abschnitt | Eintrag | Inhalt |
 |---|---|---|
