@@ -98,6 +98,12 @@ Die App hat vier Bereiche: **Startseite**, **Provider**, **Aufträge** und **Meh
 - Das **Haus** oben auf den anderen Seiten führt immer zur Startseite.
 - Der **Pfeil** oben links führt zur vorherigen Seite – auf allen Unterseiten und auf *Provider*, *Aufträge* und *Mehr*,
   sobald es eine vorherige Seite gibt.
+- **Zurück neben dem Haus:** Direkt links neben dem Haus steht auf jeder Seite außer der Startseite ebenfalls ein
+  Pfeil ←. Er wirkt wie der Pfeil oben links bzw. die Zurück-Taste der Seite (z. B. in einer Kategorie bei
+  *Neuer Provider* zurück zu den Kacheln, in der Auswahl beendet er die Auswahl).
+- **Startseite:** Die Zurück-Taste von Android und die Zurück-Geste haben hier keine Wirkung; die App bleibt offen.
+- Damit oben auch auf einem 4,7-Zoll-Handy alles in eine Zeile passt, stehen selten gebrauchte Aktionen im ⋮-Menü
+  (z. B. *Suchen* und *Weitergeben* bei den Providern, *Aktualisieren*, *Teilen* und *Leeren* beim Protokoll).
 
 ### Startseite
 
@@ -167,16 +173,18 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 Die Providerliste ist abwechselnd hinterlegt: der erste, dritte, fünfte … Provider in der Kartenfarbe, die übrigen in
 der Hintergrundfarbe.
 
-**Weitergeben:** Das Symbol oben startet die Auswahl mit einem Hinweis; nach dem Auswählen gibt das Symbol
+**Weitergeben:** *⋮ → Provider weitergeben* startet die Auswahl mit einem Hinweis; nach dem Auswählen gibt das Symbol
 *Ausgewählte Provider weitergeben* sie weiter (siehe [Provider weitergeben](#provider-weitergeben)).
 
-**Suchen:** Die Lupe links neben dem Haus durchsucht die Provider nach ihrem Namen (Groß-/Kleinschreibung egal).
+**Suchen:** *⋮ → Provider durchsuchen* durchsucht die Provider nach ihrem Namen (Groß-/Kleinschreibung egal).
 Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche.
 
 **⋮ oben auf der Providerliste**, jeweils mit Symbol:
 
 | Eintrag | Funktion |
 |---|---|
+| *Provider durchsuchen* | Provider nach Namen durchsuchen |
+| *Provider weitergeben* | Auswahl zum Weitergeben starten |
 | *Neu* | neuen Provider anlegen |
 | *Neustart* | App neu starten (Rückfrage abschaltbar unter *Mehr → Rückfragen → Neustart*) |
 | *Test* | alle Provider prüfen |
