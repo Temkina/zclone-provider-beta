@@ -165,6 +165,9 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 Die Providerliste ist abwechselnd hinterlegt: der erste, dritte, fünfte … Provider in der Kartenfarbe, die übrigen in
 der Hintergrundfarbe.
 
+**Suchen:** Die Lupe links neben dem Haus durchsucht die Provider nach ihrem Namen (Groß-/Kleinschreibung egal).
+Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche.
+
 **⋮ oben auf der Providerliste**, jeweils mit Symbol:
 
 | Eintrag | Funktion |
@@ -221,7 +224,7 @@ Verbindung testen, Ordneransicht in der App, Ordneransicht beim Teilen, Verschl�
   ganze Papierkorb dieses Providers.
 
 **Mehrere löschen:** Langes Drücken auf einen Provider (oder *⋮ oben → Auswählen*) startet die Auswahl, wie in der
-Dateiliste. Die Rückfrage nennt alle gewählten Provider und die darauf aufbauenden (z. B. crypt), die mit gelöscht
+Dateiliste. Oben stehen dann das Symbol *Ausgewählte Provider weitergeben*, das Haus und ⋮. Die Rückfrage nennt alle gewählten Provider und die darauf aufbauenden (z. B. crypt), die mit gelöscht
 werden.
 
 **Umbenennen und Löschen:**
@@ -251,7 +254,7 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 *Provider → Provider antippen*
 
-- **Navigation:** Ordner durchsuchen mit Pfadleiste („Brotkrumen“), Aktualisieren, neuer Ordner.
+- **Navigation:** Ordner durchsuchen mit Pfadleiste („Brotkrumen“), neuer Ordner.
   Ein Provider öffnet sich im obersten Ordner; mit *Mehr → Dateien und Ordner → Ordneransicht in der App* im
   zuletzt in der App geöffneten Ordner (je Provider getrennt, je Provider abweichend einstellbar unter
   *Providerliste → ⋮ am Provider → Ordneransicht in der App*). Unabhängig von der Ordneransicht beim Teilen.
@@ -368,6 +371,8 @@ Teilabruf (Vorspulen), Umbenennen, Verschieben, Kopieren, Löschen und Sperren, 
 
 *Aufträge → Neuer Auftrag*
 
+Oben neben dem Haus bricht das Kreuz ab: Nichts wird gespeichert, und die App kehrt zu den Aufträgen zurück.
+
 Ein Auftrag verbindet einen oder mehrere **Handy-Ordner** (z. B. `DCIM`, `Pictures`, `Download`) mit einem
 oder mehreren **Zielen** (Provider + Ordner). Bei mehreren Ordnern landet jeder beim Ziel in einem eigenen
 Unterordner mit seinem Namen.
@@ -476,7 +481,8 @@ Ausblenden lässt es sich über die Benachrichtigungseinstellungen der App (Kana
 
 ### App-Sperre und Verschlüsselung
 
-*Mehr → Sicherheit* – eine Seite mit den Abschnitten **App-Sperre**, **Bestätigung** und **Weitergeben und Sichern**.
+*Mehr → Sicherheit* – eine Seite mit den Abschnitten **App-Sperre**, **Bestätigung**, **Einstellungen der App** und
+**Weitergeben und Sichern**.
 Sperren geht auch über *Startseite → Ausschalten oder Neustart → Jetzt sperren*. Dann erscheint gleich der
 Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn Sie *Mit Fingerabdruck* antippen.
 
@@ -508,6 +514,22 @@ Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn Sie *Mit Fingerabdru
 - Mit App-Sperre bestätigen Sie mit **Fingerabdruck oder App-Passwort** (*Passwort verwenden*), ohne App-Sperre mit
   der **Displaysperre des Handys** (PIN, Muster, Passwort oder Fingerabdruck). Ist keins von beidem eingerichtet,
   weist die App darauf hin und gibt nichts weiter. Fehlversuche zählen wie beim Entsperren.
+
+### Einstellungen sichern
+
+*Mehr → Sicherheit → Einstellungen der App*
+
+- **Einstellungen exportieren:** speichert alle Einstellungen der App als JSON-Datei an einem Ort Ihrer Wahl
+  (z. B. `ZCloneProvider-Einstellungen-2026-10-26.json`). Nicht enthalten sind Provider (dafür die `rclone.conf`),
+  Aufträge, die App-Sperre (Passwort, Sperrzeit, Fingerabdruck) und interne Zustände wie das Ergebnis der
+  Providerprüfung. Die Datei enthält keine Zugangsdaten.
+- **Einstellungen importieren:** übernimmt die Einstellungen aus einer solchen Datei nach einer Rückfrage. Der
+  jetzige Stand wird vorher gesichert. Eine Datei aus einer neueren Version der App wird abgelehnt. Danach startet
+  die App neu, damit alle Einstellungen gelten.
+- **Vorherigen Stand wiederherstellen:** erscheint nach einem Import und macht ihn rückgängig (ebenfalls mit Neustart).
+
+Darunter, unter *Weitergeben und Sichern*, stehen die Provider: *rclone.conf exportieren*, *rclone.conf importieren*
+(dieselbe Importseite wie unter *Provider → ⋮ → rclone.conf*) und *Provider weitergeben*.
 
 ### rclone.conf exportieren
 
@@ -573,7 +595,8 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
 *Mehr → Darstellung*
 
 - **Sprache / Language:** Die Auswahl zeigt zuerst *Wie das Handy (System)*, dann die zwölf Sprachen alphabetisch
-  nach ihrem Eigennamen. Bei einer Handysprache, die die App nicht kennt, erscheint sie auf Englisch.
+  nach ihrem Eigennamen, jeweils mit der Flagge des Landes davor (Portugiesisch: Brasilien, Arabisch: Saudi-Arabien,
+  Englisch: Vereinigtes Königreich). Bei einer Handysprache, die die App nicht kennt, erscheint sie auf Englisch.
   Arabisch wird von rechts nach links dargestellt.
 - **Schwebende Leiste** (Standard an), siehe [Bedienung](#schwebende-leiste).
 - **Hintergrund** im hellen Design: *Systemfarben* (Standard, Farben von Android passend zum Hintergrundbild),
@@ -583,7 +606,8 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
 ### Weitere Seiten unter „Mehr“
 
 Eine Seite mit drei Überschriften; jeder Abschnitt liegt als abgerundete Karte auf dem Hintergrund, ebenso auf den
-Unterseiten (z. B. *Sicherheit* mit der Einleitung und den Karten App-Sperre, Bestätigung, Weitergeben und Sichern;
+Unterseiten (z. B. *Sicherheit* mit der Einleitung und den Karten App-Sperre, Bestätigung, Einstellungen der App,
+Weitergeben und Sichern;
 *Datenschutz* und *Erste Schritte* mit Einleitung und je Abschnitt einer Karte; *Lizenzen* je Abschnitt eine Karte; *Sponsor* mit dem Text
 oben und einer Kachel „Direkte Zahlung“). Jede Unterseite ist einen Schritt
 entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der Zustand
@@ -596,7 +620,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Darstellung | Sprache, schwebende Leiste, Hintergrund |
 | | Updates | Nach Updates suchen, Beim Start nach Updates suchen (nur Version von GitHub) |
 | **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort |
-| | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, rclone.conf exportieren, Provider weitergeben |
+| | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, Einstellungen sichern, rclone.conf exportieren und importieren, Provider weitergeben |
 | | Erweitert | Freigaben und Streaming, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
 | **Info** | Hilfe | Erste Schritte, Telegram |
@@ -613,7 +637,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
   - Ausschalten: vor dem kompletten Beenden der App nachfragen (*Startseite → Ausschalten oder Neustart → Ausschalten*)
 - **Android:** Zugriff auf alle Dateien (nötig für Aufträge), Benachrichtigungen (öffnet die Android-Einstellungen der App,
   je Kanal mit Ton und Sperrbildschirm), Akku-Optimierung.
-- **Sicherheit:** [App-Sperre und Bestätigung](#app-sperre-und-verschlüsselung), [rclone.conf exportieren](#rcloneconf-exportieren)
+- **Sicherheit:** [App-Sperre und Bestätigung](#app-sperre-und-verschlüsselung), [Einstellungen sichern](#einstellungen-sichern), [rclone.conf exportieren](#rcloneconf-exportieren)
   und [Provider weitergeben](#provider-weitergeben).
 - **Protokoll:**
   - Mitschreiben an oder aus. Ausgeschaltet wird gar nichts mehr protokolliert, auch keine Fehler.
@@ -765,6 +789,8 @@ Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
   - controllable from Tasker.
 - **App lock:** fingerprint or app password, which also **encrypts the rclone.conf**; a forgotten password
   can be replaced after confirming with the fingerprint or the phone's screen lock.
+- **Settings backup:** export all app settings to a file (no providers, jobs, app lock or credentials), import them
+  again and undo the last import; providers are saved via the rclone.conf.
 - **Everyday features:** a permanent status bar icon, in-app updates with checksum verification,
   12 languages, a choice of background in the light design (system colors, light gray, ivory), a tablet layout
   and a detailed log you can turn off.
