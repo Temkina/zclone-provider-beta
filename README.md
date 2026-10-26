@@ -184,7 +184,16 @@ Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche
 | *Auswählen*, *Alle auswählen* | mehrere Provider auswählen |
 
 **Neu anlegen:**
-- Alle Provider-Typen von rclone-extra stehen zur Wahl, mit Suche (z. B. „Google“, „OneDrive“, „WebDAV“).
+- Oben steht die Suche; sie durchsucht alle Provider-Typen von rclone-extra (z. B. „Google“, „OneDrive“, „WebDAV“,
+  „Magenta“).
+- Darunter Kacheln **Beliebt**: Google Drive, OneDrive, Dropbox, Mega, pCloud, MagentaCLOUD, Nextcloud, Terabox,
+  Proton Drive, Box, iCloud Drive und Yandex Disk. Bei MagentaCLOUD ist die Adresse
+  (`https://magentacloud.de/remote.php/webdav`) schon eingetragen, bei Nextcloud der passende Anbieter.
+- Danach Kacheln **Kategorien**: *Cloud-Speicher*, *Eigener Server oder NAS*, *Objektspeicher*,
+  *Verschlüsselung und Kombinationen* und *Alle Dienste*. Eine Kategorie zeigt nur ihre Typen; der Pfeil ← führt
+  zurück zu den Kacheln.
+- Allgemeine Typen sind auf Deutsch beschrieben (z. B. „Speicher dieses Handys“ statt „Local Disk“). Die Kacheln
+  zeigen allgemeine Symbole, keine Markenzeichen.
 - Das Kreuz neben dem Haus bricht ab – in der Liste und im Formular – und führt zurück zur Providerliste.
 - Der Name in der App hat höchstens 24 Zeichen. So passt er auch auf einem 4,7-Zoll-Handy (360 dp) in eine Zeile
   (gemessen: typische Namen bis 26 Zeichen, nur Großbuchstaben bis 15). Beim Import bleiben längere Namen erhalten.
