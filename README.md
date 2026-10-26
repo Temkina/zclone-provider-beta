@@ -103,7 +103,8 @@ Die App hat vier Bereiche: **Startseite**, **Provider**, **Aufträge** und **Meh
   *Neuer Provider* zurück zu den Kacheln, in der Auswahl beendet er die Auswahl).
 - **Startseite:** Die Zurück-Taste von Android und die Zurück-Geste haben hier keine Wirkung; die App bleibt offen.
 - Damit oben auch auf einem 4,7-Zoll-Handy alles in eine Zeile passt, stehen selten gebrauchte Aktionen im ⋮-Menü
-  (z. B. *Suchen* und *Weitergeben* bei den Providern, *Aktualisieren*, *Teilen* und *Leeren* beim Protokoll).
+  (z. B. *Suchen* und *Weitergeben* bei den Providern, *Neuer Ordner* und *Diesen Ordner im WLAN freigeben* in der Dateiliste,
+  *Aktualisieren*, *Teilen* und *Leeren* beim Protokoll).
 
 ### Startseite
 
@@ -173,6 +174,13 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 Die Providerliste ist abwechselnd hinterlegt: der erste, dritte, fünfte … Provider in der Kartenfarbe, die übrigen in
 der Hintergrundfarbe.
 
+- **Zusammengehörige stehen zusammen:** Ein verschlüsselter Bereich (crypt) oder eine andere Hülle steht eingerückt
+  direkt unter dem Provider, auf dem er liegt, z. B. „Mega“ und darunter „🔒 Mega_enc“.
+- **Verständliche Typen** unter dem Namen, z. B. „Mega“, „WebDAV (MagentaCLOUD)“, „Verschlüsselt in Mega“,
+  „Speicher dieses Handys“; unbekannte Typen wie bei rclone.
+- **Abschnitte ab 8 Providern:** *Cloud-Speicher*, *Eigener Server oder NAS*, *Objektspeicher* und
+  *Verschlüsselung und Kombinationen* (nach dem Anbieter darunter). Bei weniger Providern bleibt die Liste schlicht.
+
 **Weitergeben:** *⋮ → Provider weitergeben* startet die Auswahl mit einem Hinweis; nach dem Auswählen gibt das Symbol
 *Ausgewählte Provider weitergeben* sie weiter (siehe [Provider weitergeben](#provider-weitergeben)).
 
@@ -202,7 +210,19 @@ Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche
   zurück zu den Kacheln.
 - Allgemeine Typen sind auf Deutsch beschrieben (z. B. „Speicher dieses Handys“ statt „Local Disk“). Die Kacheln
   zeigen allgemeine Symbole, keine Markenzeichen.
-- Das Kreuz neben dem Haus bricht ab – in der Liste und im Formular – und führt zurück zur Providerliste.
+- **Geführt statt langes Formular:** Nach der Wahl stehen nur die nötigen Felder da, mit verständlichen Namen
+  (z. B. *Benutzername bzw. E-Mail-Adresse*, *Passwort*, *Adresse (URL)*, *Zwei-Faktor-Code*). Anbieter mit
+  Browser-Anmeldung (Google Drive, OneDrive, Dropbox …) brauchen meist gar kein Feld. Alles Weitere steht unter
+  *Alle Einstellungen anzeigen*, auch von der Kachel schon eingetragene Werte (z. B. die Adresse der MagentaCLOUD).
+- **Hinweise zu den Zugangsdaten** bei Mega, WebDAV, Nextcloud (Adresse unter *Dateien → Dateieinstellungen →
+  WebDAV*, am besten ein App-Passwort) und MagentaCLOUD (eigenes Passwort für Geräte unter „Sitzung/Geräte“).
+- **Name vorgeschlagen:** z. B. „Google Drive“, bei einem zweiten „Google Drive 2“; änderbar.
+- **Verbindung sofort geprüft:** Nach dem Einrichten testet die App die Verbindung. Klappt sie, steht der grüne Haken
+  in der Liste. Sonst erklärt ein Fenster die Ursache verständlich – Anmeldung abgelehnt, Server nicht erreichbar,
+  Adresse falsch (bei Nextcloud: Endung `/remote.php/dav/files/BENUTZERNAME`), Zertifikat ungültig, Anbieter bremst –
+  oder zeigt die Meldung von rclone. *Korrigieren* entfernt den Provider wieder, die Eingaben bleiben stehen;
+  *Trotzdem behalten* lässt ihn bestehen (z. B. wenn der Server gerade aus ist).
+- Das Kreuz oben rechts bricht ab – in der Liste und im Formular – und führt zurück zur Providerliste.
 - Der Name in der App hat höchstens 24 Zeichen. So passt er auch auf einem 4,7-Zoll-Handy (360 dp) in eine Zeile
   (gemessen: typische Namen bis 26 Zeichen, nur Großbuchstaben bis 15). Beim Import bleiben längere Namen erhalten.
 - Das Fragezeichen öffnet die rclone-Hilfe zum gewählten Typ.
@@ -249,8 +269,8 @@ Verbindung testen, Ordneransicht in der App, Ordneransicht beim Teilen, Verschl�
   ganze Papierkorb dieses Providers.
 
 **Mehrere löschen:** Langes Drücken auf einen Provider (oder *⋮ oben → Auswählen*) startet die Auswahl, wie in der
-Dateiliste. Oben stehen dann das Symbol *Ausgewählte Provider weitergeben*, das Haus und ⋮. Die Rückfrage nennt alle gewählten Provider und die darauf aufbauenden (z. B. crypt), die mit gelöscht
-werden.
+Dateiliste. Oben stehen dann das Symbol *Ausgewählte Provider weitergeben*, Zurück (beendet die Auswahl), das Haus
+und ⋮. Die Rückfrage nennt alle gewählten Provider und die darauf aufbauenden (z. B. crypt), die mit gelöscht werden.
 
 **Umbenennen und Löschen:**
 - Umbenennen zieht Verweise mit, etwa den Basis-Provider eines crypt-Providers und die Aufträge.
@@ -263,6 +283,16 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 ### Verschlüsselter Bereich
 
 *Direkt nach dem Einrichten eines neuen Providers oder über ⋮ am Provider → Verschlüsselten Bereich anlegen*
+
+**Nach dem Einrichten** fragt die App: „Sollen Ihre Dateien bei … verschlüsselt abgelegt werden?“ – *Ja (empfohlen)*
+oder *Nein*. Bei *Ja*:
+- Passwort selbst wählen oder mit *Sicheres Passwort erzeugen* erzeugen lassen (4 × 5 gut lesbare Zeichen, zum
+  Kopieren angezeigt; es erscheint nie im Protokoll). Darunter steht die Passwortstärke (schwach, mittel, stark).
+- *Anlegen* geht erst nach dem Häkchen „Ich habe das Passwort notiert.“
+- Name und Ordner vergibt die App selbst (z. B. `Mega_enc` im Ordner `Mega:Verschlüsselt`); *Name und Ordner
+  ändern* zeigt die Felder.
+
+Über *⋮ am Provider* stehen alle Felder wie bisher sofort da.
 
 - Legt zum Provider einen **crypt-Provider** an. Was Sie dorthin hochladen, liegt beim Anbieter verschlüsselt,
   auch die Datei- und Ordnernamen.
@@ -279,7 +309,7 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 *Provider → Provider antippen*
 
-- **Navigation:** Ordner durchsuchen mit Pfadleiste („Brotkrumen“), neuer Ordner.
+- **Navigation:** Ordner durchsuchen mit Pfadleiste („Brotkrumen“), *⋮ → Neuer Ordner*.
   Ein Provider öffnet sich im obersten Ordner; mit *Mehr → Dateien und Ordner → Ordneransicht in der App* im
   zuletzt in der App geöffneten Ordner (je Provider getrennt, je Provider abweichend einstellbar unter
   *Providerliste → ⋮ am Provider → Ordneransicht in der App*). Unabhängig von der Ordneransicht beim Teilen.
@@ -338,8 +368,8 @@ crypt-Provider sind mit einem **Schloss** gekennzeichnet.
 
 ### Freigaben im WLAN
 
-*Startseite → Symbol „Freigaben und Streaming“*, *Mehr → Erweitert → Freigaben und Streaming* oder das
-Freigabe-Symbol in der Dateiliste (gibt den angezeigten Ordner frei)
+*Startseite → Symbol „Freigaben und Streaming“*, *Mehr → Erweitert → Freigaben und Streaming* oder in der
+Dateiliste *⋮ → Diesen Ordner im WLAN freigeben*
 
 Stellt einen Provider-Ordner für andere Geräte im selben WLAN bereit:
 
@@ -396,7 +426,7 @@ Teilabruf (Vorspulen), Umbenennen, Verschieben, Kopieren, Löschen und Sperren, 
 
 *Aufträge → Neuer Auftrag*
 
-Oben neben dem Haus bricht das Kreuz ab: Nichts wird gespeichert, und die App kehrt zu den Aufträgen zurück.
+Oben rechts bricht das Kreuz ab: Nichts wird gespeichert, und die App kehrt zu den Aufträgen zurück.
 
 Ein Auftrag verbindet einen oder mehrere **Handy-Ordner** (z. B. `DCIM`, `Pictures`, `Download`) mit einem
 oder mehreren **Zielen** (Provider + Ordner). Bei mehreren Ordnern landet jeder beim Ziel in einem eigenen
@@ -490,7 +520,7 @@ Die andere Version bleibt dabei erhalten: Sie liegt auf beiden Seiten unter eine
 
 Gefundene Konflikte meldet die App per Benachrichtigung und an der Auftragskarte. Auf der **Konfliktseite**
 sehen Sie beide Versionen mit Vorschau, Größe und Datum. Dort behalten Sie eine davon (die andere wird auf beiden
-Seiten gelöscht) oder übernimmst alle automatischen Entscheidungen auf einmal.
+Seiten gelöscht) oder übernehmen alle automatischen Entscheidungen auf einmal.
 
 ### Steuerung durch andere Apps (Tasker)
 
@@ -672,7 +702,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
   - Neustart: vor dem Neustart der App nachfragen (*Startseite → Ausschalten oder Neustart → Neustart* und *Provider → ⋮ → Neustart*)
   - Ausschalten: vor dem kompletten Beenden der App nachfragen (*Startseite → Ausschalten oder Neustart → Ausschalten*)
 - **Android:** Zugriff auf alle Dateien (nötig für Aufträge), Benachrichtigungen (öffnet die Android-Einstellungen der App,
-  je Kanal mit Ton und Sperrbildschirm), Akku-Optimierung.
+  je Kanal mit Ton und Sperrbildschirm), Akku-Optimierung, Standort (für WLAN-Namen, nur Version von GitHub).
 - **Sicherheit:** [App-Sperre und Bestätigung](#app-sperre-und-verschlüsselung), [Einstellungen sichern](#einstellungen-sichern), [rclone.conf exportieren](#rcloneconf-exportieren)
   und [Provider weitergeben](#provider-weitergeben).
 - **Protokoll:**
@@ -745,7 +775,7 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
   Terabox, Teldrive und iCloud Photos. Diese kennt das normale rclone nicht.
 - **Provider übertragen:** PC → Handy per Import der `rclone.conf`, Handy → PC per Export.
 - **Verschlüsselte Konfiguration:** Beide verstehen das rclone-Format. Am PC geht das unter
-  *Optionen → Sicherheit → Konfigurationsverschlüsselung*, im Handy über die App-Sperre.
+  *Optionen → Einstellungen → Reiter „Sicherheit“*, im Handy über die App-Sperre.
 - **Releases:** Die Android-Versionen erscheinen in einem eigenen Repository,
   [zclone-provider-beta](https://github.com/Temkina/zclone-provider-beta). Die Releases von ZClone am PC
   bleiben auf [zclone_beta](https://github.com/Temkina/zclone_beta) und davon unberührt.
@@ -803,8 +833,10 @@ Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
   help and Telegram; a floating bar for Home, Providers, Jobs and More (can be turned off). Providers are checked once
   after adding them, after a phone restart and silently in the background every 3 hours; the result is kept.
 - **Providers:** import the PC's `rclone.conf` (pick single providers, encrypted files supported) or create
-  new ones (browser sign-in), then edit, rename, delete (also several at once) and test them.
-- **Encrypted area:** right after setting up a provider, create a crypt provider on top of it in one step;
+  new ones (tiles for popular services and categories, a guided form with only the needed fields, an immediate
+  connection test with a plain-language error, browser sign-in), then edit, rename, delete (also several at once) and test them.
+- **Encrypted area:** right after setting up a provider the app asks “Store encrypted?” – with a generated
+  password and a “written down” check – and creates a crypt provider on top of it, listed indented below it;
   the app suggests it whenever you pick the unencrypted provider as a target.
 - **Files:** browse with thumbnails, upload, download, open, share, rename, delete (also **several at once** via long press), and **move or copy** files
   and folders, even across providers. Providers can also appear in Android's *Files* app.
