@@ -96,6 +96,8 @@ Die App hat vier Bereiche: **Startseite**, **Provider**, **Aufträge** und **Meh
   die Kacheln der Startseite und *Mehr* über das Zahnrad oben auf der Startseite.
 - Auf breiten Bildschirmen (Tablets, Chromebooks) liegt die Navigation seitlich, Listen und Details stehen nebeneinander.
 - Das **Haus** oben auf den anderen Seiten führt immer zur Startseite.
+- Der **Pfeil** oben links führt zur vorherigen Seite – auf allen Unterseiten und auf *Provider*, *Aufträge* und *Mehr*,
+  sobald es eine vorherige Seite gibt.
 
 ### Startseite
 
@@ -165,6 +167,9 @@ Tipp: Die `rclone.conf` enthält Zugangsdaten. Die Kopie auf dem Handy nach dem 
 Die Providerliste ist abwechselnd hinterlegt: der erste, dritte, fünfte … Provider in der Kartenfarbe, die übrigen in
 der Hintergrundfarbe.
 
+**Weitergeben:** Das Symbol oben startet die Auswahl mit einem Hinweis; nach dem Auswählen gibt das Symbol
+*Ausgewählte Provider weitergeben* sie weiter (siehe [Provider weitergeben](#provider-weitergeben)).
+
 **Suchen:** Die Lupe links neben dem Haus durchsucht die Provider nach ihrem Namen (Groß-/Kleinschreibung egal).
 Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche.
 
@@ -180,6 +185,9 @@ Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche
 
 **Neu anlegen:**
 - Alle Provider-Typen von rclone-extra stehen zur Wahl, mit Suche (z. B. „Google“, „OneDrive“, „WebDAV“).
+- Das Kreuz neben dem Haus bricht ab – in der Liste und im Formular – und führt zurück zur Providerliste.
+- Der Name in der App hat höchstens 24 Zeichen. So passt er auch auf einem 4,7-Zoll-Handy (360 dp) in eine Zeile
+  (gemessen: typische Namen bis 26 Zeichen, nur Großbuchstaben bis 15). Beim Import bleiben längere Namen erhalten.
 - Das Fragezeichen öffnet die rclone-Hilfe zum gewählten Typ.
 - Adressen in den Erklärungen unter den Feldern (z. B. bei *client_id* von Google Drive) lassen sich antippen und öffnen
   sich im Browser.
@@ -376,6 +384,14 @@ Oben neben dem Haus bricht das Kreuz ab: Nichts wird gespeichert, und die App ke
 Ein Auftrag verbindet einen oder mehrere **Handy-Ordner** (z. B. `DCIM`, `Pictures`, `Download`) mit einem
 oder mehreren **Zielen** (Provider + Ordner). Bei mehreren Ordnern landet jeder beim Ziel in einem eigenen
 Unterordner mit seinem Namen.
+
+**Nacheinander oder gleichzeitig:** Standardmäßig läuft immer nur ein Auftrag; ein zweiter wartet, bis der erste
+fertig ist. Mit *Mehr → Erweitert → Aufträge gleichzeitig ausführen* laufen Aufträge zu verschiedenen Providern
+gleichzeitig; Aufträge zum selben Provider warten weiter aufeinander. Das Protokoll nennt, worauf ein Auftrag wartet.
+
+**Während des Laufs gelöscht:** Wird eine Datei gelöscht, während ein Auftrag läuft, überspringt rclone sie und
+wiederholt den Lauf; eine halb übertragene Kopie entfernt rclone selbst. Der Auftrag gilt als erfolgreich, das
+Ergebnis nennt die übersprungenen Dateien (z. B. „1 Datei(en) während des Laufs gelöscht“), das Protokoll ihre Namen.
 
 **Richtung**
 
@@ -621,7 +637,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Updates | Nach Updates suchen, Beim Start nach Updates suchen (nur Version von GitHub) |
 | **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort |
 | | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, Einstellungen sichern, rclone.conf exportieren und importieren, Provider weitergeben |
-| | Erweitert | Freigaben und Streaming, Steuerung durch andere Apps, Root-Zugriff |
+| | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
 | **Info** | Hilfe | Erste Schritte, Telegram |
 | | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Version |
