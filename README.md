@@ -584,15 +584,18 @@ Eine verschlüsselte `rclone.conf` lässt sich so lesen:
 Damit zwei Personen über denselben Provider verschlüsselte Daten austauschen, geben Sie einzelne Provider als eigene
 `rclone.conf` weiter:
 
+- **Zuerst ein Auswahlfenster:** *Teilen*, *Speichern*, *QR-Code* oder *Abbrechen*. *Abbrechen* gibt nichts weiter,
+  die Auswahl bleibt erhalten.
 - **Auswahl samt Abhängigkeiten:** Was ein gewählter Provider braucht, kommt automatisch mit und wird im Dialog
   genannt (z. B. `Mega_enc` braucht `Mega`). Alle anderen Provider bleiben auf Ihrem Handy.
 - **Bestätigung vorher** (abschaltbar unter *Mehr → Sicherheit → Bestätigung*): mit Fingerabdruck oder App-Passwort,
   ohne App-Sperre mit der Displaysperre des Handys.
 - **Eigenes Weitergabe-Passwort** (mindestens 8 Zeichen, zweimal eingeben): Die Datei wird damit verschlüsselt, nicht
   mit dem App-Passwort. Teilen Sie es der anderen Person getrennt von der Datei mit (z. B. mündlich).
-- **Speichern, Senden oder QR-Code:** *Speichern* legt die Datei an einem gewählten Ort ab. *Senden* öffnet das
-  Teilen-Menü von Android – z. B. **Quick Share**, **Bluetooth**, Messenger oder E-Mail. *QR-Code* zeigt die
-  verschlüsselte Datei als QR-Code zum Abscannen (bei sehr vielen Providern zu groß – dann Senden oder Speichern).
+- **Nach dem Passwort** geschieht, was im Auswahlfenster gewählt wurde: *Teilen* öffnet das Teilen-Menü von Android –
+  z. B. **Quick Share**, **Bluetooth**, Messenger oder E-Mail. *Speichern* legt die Datei an einem gewählten Ort ab.
+  *QR-Code* zeigt die verschlüsselte Datei als QR-Code zum Abscannen (bei sehr vielen Providern zu groß – dann Teilen
+  oder Speichern).
 - **Empfänger:** Kommt die Datei per Teilen an, *Teilen → ZClone Provider → Provider importieren*; beim QR-Code
   *Provider → ⋮ → rclone.conf → Importieren → QR-Code scannen*; sonst *Provider → ⋮ → rclone.conf → Importieren*.
   Dann Weitergabe-Passwort eingeben, Provider übernehmen.
