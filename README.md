@@ -126,11 +126,12 @@ Die App öffnet immer mit der Startseite.
   | **Eingeschränkt** | Zuerst, wie viele Provider erreichbar sind (z. B. „5 von 6 Providern erreichbar“), darunter der Grund: nicht erreichbare Provider, fehlgeschlagene Aufträge, Programmfehler. |
   | **Nicht geprüft** | Für mindestens einen Provider gibt es noch kein Ergebnis. |
   | **Wird geprüft …** | Die Prüfung läuft. |
-  | **Provider werden verbunden** | Die Providerliste wird gerade geladen. |
+  | **Provider werden geladen** | Die Providerliste wird gerade geladen; geprüft wird dabei nichts. |
   | **Keine Provider vorhanden** | Es ist noch kein Provider eingerichtet; die Kachel *Provider* ist dann rot. |
 
   - Als Programmfehler zählt ein Fehlereintrag mit unerwarteter Ausnahme, nicht eine Fehlermeldung von rclone.
-  - Darunter stehen die Version der App, das Abzeichen *GitHub* bzw. *Google Play* und die Uhrzeit der letzten Prüfung.
+  - Darunter stehen die Version der App, das Abzeichen *GitHub* bzw. *Google Play* und die Uhrzeit der letzten Prüfung
+    aller Provider (eine Prüfung nur neuer Provider ändert sie nicht).
   - Antippen prüft alle Provider neu; ohne Provider öffnet es *Neuer Provider*.
   - Das Ergebnis bleibt gespeichert, auch über einen Neustart der App. Automatisch geprüft wird beim Start nur, was
     noch kein Ergebnis hat (also einmal nach dem Anlegen eines Providers), nach einem Neustart des Handys alle Provider
@@ -212,10 +213,14 @@ Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche
   zeigen allgemeine Symbole, keine Markenzeichen.
 - **Geführt statt langes Formular:** Nach der Wahl stehen nur die nötigen Felder da, mit verständlichen Namen
   (z. B. *Benutzername bzw. E-Mail-Adresse*, *Passwort*, *Adresse (URL)*, *Zwei-Faktor-Code*). Anbieter mit
-  Browser-Anmeldung (Google Drive, OneDrive, Dropbox …) brauchen meist gar kein Feld. Alles Weitere steht unter
+  Browser-Anmeldung (OneDrive, Dropbox …) brauchen meist gar kein Feld. Alles Weitere steht unter
   *Alle Einstellungen anzeigen*, auch von der Kachel schon eingetragene Werte (z. B. die Adresse der MagentaCLOUD).
 - **Hinweise zu den Zugangsdaten** bei Mega, WebDAV, Nextcloud (Adresse unter *Dateien → Dateieinstellungen →
   WebDAV*, am besten ein App-Passwort) und MagentaCLOUD (eigenes Passwort für Geräte unter „Sitzung/Geräte“).
+- **Google Drive nur mit eigener Client-ID:** Den gemeinsamen Zugang von rclone stellt rclone 2026 ein. Die App
+  bietet ihn deshalb nicht mehr an: *Client-ID* und *Clientschlüssel* sind Pflichtfelder, der Hinweis darüber führt zur
+  Anleitung (https://rclone.org/drive/#making-your-own-client-id, englisch). Fragt rclone trotzdem nach dem gemeinsamen
+  Zugang (z. B. beim Neu-Anmelden eines älteren Providers), lehnt die App ab und fragt nach der eigenen Client-ID.
 - **Name vorgeschlagen:** z. B. „Google Drive“, bei einem zweiten „Google Drive 2“; änderbar.
 - **Verbindung sofort geprüft:** Nach dem Einrichten testet die App die Verbindung. Klappt sie, steht der grüne Haken
   in der Liste. Sonst erklärt ein Fenster die Ursache verständlich – Anmeldung abgelehnt, Server nicht erreichbar,
@@ -499,6 +504,8 @@ Die Bedingungen gelten für automatische Läufe und Auslöser, nicht für *Jetzt
 - **Löschsperre** (Zwei-Wege-Abgleich, je Auftrag 50/75/90 % oder aus):
   - Der Abgleich bricht ab, wenn mehr als dieser Anteil gelöscht würde oder sich alle Dateien einer Seite geändert haben.
   - Nach einem Abbruch lässt er sich gezielt **einmal ohne Sperre** ausführen.
+- **Abgleichstand unbrauchbar** (z. B. erster Abgleich eines leeren Ordners, Lauf abgebrochen): Der Abgleich wird
+  einmal neu aufgebaut; dabei wird nichts gelöscht, bei Unterschieden gewinnt die neuere Datei.
 
 **Ordner**
 
@@ -703,7 +710,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, Einstellungen sichern, rclone.conf exportieren und importieren, Provider weitergeben |
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
-| **Info** | Hilfe | Erste Schritte, Telegram |
+| **Info** | Hilfe | Erste Schritte, Telegram, Protokoll per E-Mail senden |
 | | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Version |
 | | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
 
@@ -734,6 +741,9 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
     höchstens etwa 143 Zeichen für verschlüsselte Dateinamen – nach der rclone-Dokumentation zu crypt) und
     „Wie oft synchronisieren?“ (zu häufige Abgleiche können Anbieter bremsen oder sperren lassen).
   - *Telegram:* Fragen, Probleme, Vorschläge.
+  - *Protokoll per E-Mail senden:* öffnet die Mail-App mit dem Protokoll im Anhang und dem Entwickler als Empfänger.
+    Nur zum Einsenden des Protokolls – E-Mails, die nicht nur das Protokoll enthalten, werden nicht beachtet; für
+    Fragen gibt es Telegram. Die Adresse selbst zeigt die App nicht an.
 - **Über:** Lizenzen (alle Bestandteile mit vollständigem Lizenztext), Datenschutz, Projektseite von ZClone auf GitHub,
   Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub.
 
