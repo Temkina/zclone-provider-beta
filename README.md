@@ -234,6 +234,15 @@ Ohne Treffer erscheint ein Hinweis; *Zurück* oder der Pfeil schließt die Suche
   Version von GitHub). Wer sich darüber anmeldet, unterstützt die Entwicklung (Provision von pCloud); es werden
   keine Daten aus der App übertragen, der Link öffnet nur den Browser.
 - Bei Anbietern mit Anmeldung öffnet sich der Browser, danach geht es automatisch weiter.
+  - Die App dabei nicht schließen und nicht aus „Zuletzt verwendet“ wegwischen – sonst bricht die Anmeldung ab.
+    Wird die App doch mittendrin beendet (auch durch einen Neustart des Handys), entfernt der nächste Start den
+    halb angelegten Provider; ein solcher meldet sonst „Anmeldung im Browser nicht abgeschlossen“.
+  - **In anderem Browser öffnen:** Lädt die Anmeldeseite nicht („Verbindung fehlgeschlagen“ – so mit Firefox auf
+    einem Handy beobachtet, mit Chrome klappte es), öffnet diese Taste im Fenster „Anmeldung im Browser“ die
+    Browserauswahl von Android.
+  - Fürs Protokoll: welcher Browser geöffnet wurde, ob die Anmeldeseite von der App aus erreichbar ist, und jede
+    Zeile von rclone während der Einrichtung (Zeilen mit Zugangsdaten werden ausgelassen) – darunter „Anmeldeseite
+    wurde aufgerufen“, sobald ein Browser sie erreicht.
 - Rückfragen von rclone (z. B. welches OneDrive-Laufwerk) stellt die App als Auswahl.
 
 **⋮ am Provider:** Bearbeiten, Neu anmelden (abgelaufene Anmeldung erneuern), Umbenennen, Löschen,
@@ -556,6 +565,11 @@ Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn Sie *Mit Fingerabdru
   rclone-eigenen Format, also auch mit rclone am PC lesbar.
 - *Passwort ändern* verschlüsselt neu, *Ausschalten* entschlüsselt wieder.
 - **Schutz gegen Durchprobieren:** Ab dem 5. falschen Passwort wird die Wartezeit immer länger.
+- **Fingerabdrücke am Handy geändert** (einer hinzugefügt oder entfernt): Dann gilt der Fingerabdruck in der ganzen
+  App nicht mehr – beim Entsperren, bei Bestätigungen und bei *Passwort vergessen?* (dort nur noch die Displaysperre) –,
+  bis einmal das App-Passwort eingegeben wurde. Danach fragt die App, ob der Fingerabdruck wieder gelten soll.
+  Erkannt wird das über einen eigenen Schlüssel im Android-Keystore, den Android bei jeder Änderung der
+  Fingerabdrücke ungültig macht.
 - Aufträge und Freigaben laufen bei gesperrter App weiter.
 - **Passwort vergessen?** Auf dem Sperrbildschirm oder unter *Mehr → Sicherheit*:
   - Mit **Fingerabdruck oder der Displaysperre des Handys** (PIN, Muster, Passwort) bestätigen, dann ein
