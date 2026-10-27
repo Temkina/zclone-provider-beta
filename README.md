@@ -761,6 +761,8 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
     sie). Den Freischaltcode tragen Sie unter *Freischalten* ein. Er gilt nur auf diesem Gerät; nach einer
     Werkszurücksetzung oder auf einem anderen Gerät ist ein neuer nötig. Eine Neuinstallation der App ändert die
     Gerätekennung nicht.
+  - Ab Version 1.29.40 nimmt die App außerdem eine Lizenz für alle Geräte an. Sie wird nur vom Entwickler vergeben;
+    wie jeder Freischaltcode lässt sie sich weder erraten noch berechnen.
   - Die Version aus Google Play ist nicht betroffen.
 
 ---
