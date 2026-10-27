@@ -138,6 +138,10 @@ Die App öffnet immer mit der Startseite.
     und außerdem still im Hintergrund alle 3 Stunden (siehe [Provider verwalten](#provider-verwalten)).
   - Jeder Wechsel der Statuskarte steht mit Grund im Protokoll.
 - **Kacheln** *Provider* und *Aufträge* mit Anzahl; Antippen öffnet den Bereich.
+- **Gezählt werden Anbieter:** Ein verschlüsselter Bereich (crypt) oder eine andere Hülle zählt zu dem Provider, auf
+  dem sie liegt – „Mega“ mit „Mega_enc“ ist ein Provider. Er gilt als erreichbar, wenn auch seine verschlüsselten
+  Bereiche erreichbar sind; sonst nennt die Karte den betroffenen Eintrag (z. B. „Mega_enc“). Unter der Zahl auf der
+  Kachel *Provider* steht, wie viele davon einen verschlüsselten Bereich haben („davon 3 verschlüsselt“).
 - **Infokarte:** letzter und nächster Auftrag, App-Sperre; aufgeklappt zusätzlich App-Version, rclone-Version und Freigaben.
 - **Haben Sie Schwierigkeiten?** mit *Hilfe* und *Telegram*.
 - **ZClone Provider unterstützen** (nur in der Version von GitHub): öffnet *Sponsor*.
@@ -711,7 +715,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
 | **Info** | Hilfe | Erste Schritte, Telegram, Protokoll per E-Mail senden |
-| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Version |
+| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Version |
 | | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
 
 - **Dateien und Ordner:**
@@ -741,9 +745,10 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
     höchstens etwa 143 Zeichen für verschlüsselte Dateinamen – nach der rclone-Dokumentation zu crypt) und
     „Wie oft synchronisieren?“ (zu häufige Abgleiche können Anbieter bremsen oder sperren lassen).
   - *Telegram:* Fragen, Probleme, Vorschläge.
-  - *Protokoll per E-Mail senden:* öffnet die Mail-App mit dem Protokoll im Anhang und dem Entwickler als Empfänger.
-    Nur zum Einsenden des Protokolls – E-Mails, die nicht nur das Protokoll enthalten, werden nicht beachtet; für
-    Fragen gibt es Telegram. Die Adresse selbst zeigt die App nicht an.
+  - *Protokoll per E-Mail senden* (auch unter *Über*): öffnet die Mail-App mit dem Protokoll im Anhang und dem
+    Entwickler als Empfänger. Nur zum Einsenden des Protokolls – E-Mails, die nicht nur das Protokoll enthalten, werden
+    nicht beachtet; für Fragen gibt es Telegram. Die Adresse selbst zeigt die App nicht an. Mit einer Mail-App öffnet
+    sie sich direkt, bei mehreren erscheint die Auswahl nur aus ihnen; ist keine da, die Auswahl aller Apps.
 - **Über:** Lizenzen (alle Bestandteile mit vollständigem Lizenztext), Datenschutz, Projektseite von ZClone auf GitHub,
   Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub.
 
