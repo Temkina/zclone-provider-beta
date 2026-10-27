@@ -715,7 +715,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
 | **Info** | Hilfe | Erste Schritte, Telegram, Protokoll per E-Mail senden |
-| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Version |
+| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Freischalten (nur Version von GitHub), Version |
 | | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
 
 - **Dateien und Ordner:**
@@ -751,6 +751,17 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
     sie sich direkt, bei mehreren erscheint die Auswahl nur aus ihnen; ist keine da, die Auswahl aller Apps.
 - **Über:** Lizenzen (alle Bestandteile mit vollständigem Lizenztext), Datenschutz, Projektseite von ZClone auf GitHub,
   Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub.
+- **Freischalten** (nur Version von GitHub, unter *Über*):
+  - Die App lässt sich 50-mal öffnen (gezählt ab Version 1.29.39). Danach erscheint bei jedem Öffnen der Hinweis
+    *Lizenz erforderlich*, und Aufträge werden nicht mehr ausgeführt – weder automatisch noch über *Jetzt
+    ausführen*. Jeder ausgelassene Auftrag meldet sich mit einer Benachrichtigung und an seiner Karte; die Statuskarte
+    steht dann auf *Eingeschränkt*.
+  - Dateien, Provider, Freigaben und der Export der rclone.conf funktionieren weiter.
+  - Freischalten: Lizenz über Ko-fi oder Stripe kaufen und dabei die **Gerätekennung** angeben (Antippen kopiert
+    sie). Den Freischaltcode tragen Sie unter *Freischalten* ein. Er gilt nur auf diesem Gerät; nach einer
+    Werkszurücksetzung oder auf einem anderen Gerät ist ein neuer nötig. Eine Neuinstallation der App ändert die
+    Gerätekennung nicht.
+  - Die Version aus Google Play ist nicht betroffen.
 
 ---
 
