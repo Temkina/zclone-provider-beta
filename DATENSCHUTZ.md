@@ -80,6 +80,14 @@ Beim Einrichten eines pCloud-Providers zeigt die App einen als solchen gekennzei
 sich darüber bei pCloud an, erhält der Entwickler eine Provision; für Sie ändert sich nichts. Dabei werden keine
 Daten aus der App übertragen – der Link öffnet nur den Browser.
 
+## Freischaltung (nur Version von GitHub)
+
+Nach 50 Öffnungen führt die Version von GitHub Aufträge erst wieder aus, wenn sie mit einer Lizenz freigeschaltet ist.
+Dafür geben Sie beim Kauf über Ko-fi oder Stripe eine Gerätekennung an. Sie wird aus der Kennung berechnet, die Android
+dieser App gibt; die Android-Kennung selbst lässt sich daraus nicht zurückrechnen. Die App sendet dabei nichts – die
+Kennung übermitteln Sie selbst beim Kauf. Der Entwickler verwendet sie nur, um Ihren Freischaltcode zu erzeugen. Den Code
+prüft die App ohne Internet auf dem Gerät. Für den Kauf gelten die Datenschutzbestimmungen von Ko-fi bzw. Stripe.
+
 ## Herunterladen der App
 
 Beim Herunterladen verarbeiten GitHub bzw. Google Play Daten nach ihren eigenen Datenschutzbestimmungen. Der
@@ -174,6 +182,14 @@ data.
 When setting up a pCloud provider, the app shows a referral link marked as such. If you sign up with pCloud through
 it, the developer receives a commission; nothing changes for you. No data from the app is transferred – the link
 only opens the browser.
+
+## Unlocking (GitHub version only)
+
+After 50 starts, the GitHub version only runs jobs again once it is unlocked with a licence. To do so, you provide a
+device ID when buying via Ko-fi or Stripe. It is calculated from the ID Android gives this app; the Android ID itself
+cannot be derived from it. The app sends nothing – you pass on the ID yourself when buying. The developer only uses it to
+create your unlock code. The app checks the code on the device without internet. Ko-fi's or Stripe's privacy policy
+applies to the purchase.
 
 ## Downloading the app
 
