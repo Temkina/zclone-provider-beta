@@ -72,7 +72,9 @@ Startseite, Provider, Aufträge und *Mehr* (Hintergrund Elfenbein).
    (*Mehr → Android*). Für Durchsuchen, Teilen und Streaming ist das nicht nötig.
 5. Unter *Mehr → Android* empfiehlt es sich außerdem,
    - die *Benachrichtigungen* zu erlauben (Fortschritt, Ergebnisse, Konflikte, Statussymbol) und
-   - die App von der *Akku-Optimierung* auszunehmen (zuverlässige Aufträge im Hintergrund).
+   - die App von der *Akku-Optimierung* auszunehmen (zuverlässige Aufträge im Hintergrund) und
+   - ab Android 17 das *Lokale Netzwerk* zu erlauben, wenn ein Provider im eigenen Netz liegt (z. B. NAS) oder
+     Freigaben genutzt werden.
 
    Die Seite zeigt je Punkt einen grünen Haken oder ein rotes Kreuz.
 6. Optional: die [App-Sperre](#app-sperre-und-verschlüsselung) einschalten.
@@ -390,7 +392,9 @@ oder *Nein*. Bei *Ja*:
 *Startseite → Symbol „Freigaben und Streaming“*, *Mehr → Erweitert → Freigaben und Streaming* oder in der
 Dateiliste *⋮ → Diesen Ordner im WLAN freigeben*
 
-Stellt einen Provider-Ordner für andere Geräte im selben WLAN bereit:
+Stellt einen Provider-Ordner für andere Geräte im selben WLAN bereit. Ab Android 17 erreichen andere Geräte die
+Freigabe nur mit der Berechtigung *Lokales Netzwerk*: Fehlt sie, fragt die App beim Starten danach; abgelehnt startet
+die Freigabe trotzdem (nur auf diesem Gerät nutzbar), mit einem Hinweis.
 
 | Art | wofür | Anmeldung | Schreiben |
 |---|---|---|---|
@@ -712,7 +716,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Rückfragen | Papierkorb leeren, Neustart, Ausschalten |
 | | Darstellung | Sprache, schwebende Leiste, Hintergrund |
 | | Updates | Nach Updates suchen, Beim Start nach Updates suchen (nur Version von GitHub) |
-| **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort |
+| **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort, Lokales Netzwerk (ab Android 17) |
 | | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, Einstellungen sichern, rclone.conf exportieren und importieren, Provider weitergeben |
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
@@ -729,7 +733,8 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
   - Neustart: vor dem Neustart der App nachfragen (*Startseite → Ausschalten oder Neustart → Neustart* und *Provider → ⋮ → Neustart*)
   - Ausschalten: vor dem kompletten Beenden der App nachfragen (*Startseite → Ausschalten oder Neustart → Ausschalten*)
 - **Android:** Zugriff auf alle Dateien (nötig für Aufträge), Benachrichtigungen (öffnet die Android-Einstellungen der App,
-  je Kanal mit Ton und Sperrbildschirm), Akku-Optimierung, Standort (für WLAN-Namen, nur Version von GitHub).
+  je Kanal mit Ton und Sperrbildschirm), Akku-Optimierung, Standort (für WLAN-Namen, nur Version von GitHub),
+  Lokales Netzwerk (nur ab Android 17; abgelehnt öffnet ein erneutes Antippen die App-Einstellungen von Android).
 - **Sicherheit:** [App-Sperre und Bestätigung](#app-sperre-und-verschlüsselung), [Einstellungen sichern](#einstellungen-sichern), [rclone.conf exportieren](#rcloneconf-exportieren)
   und [Provider weitergeben](#provider-weitergeben).
 - **Protokoll:**
@@ -782,6 +787,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | Apps installieren | Updates aus der App heraus (Android fragt jedes Mal nach) |
 | Fingerabdruck | App-Sperre |
 | Kamera | nur zum Einlesen eines QR-Codes (wird erst beim Scannen gefragt; ohne sie: aus einem Bild lesen). Bilder werden nicht gespeichert. |
+| Lokales Netzwerk (ab Android 17, Gruppe „Geräte in der Nähe“) | Provider im eigenen Netz (z. B. NAS unter 192.168.…, `nas.local`, `fritz.box`) und Freigaben für andere Geräte. Ohne sie sperrt Android jeden Verkehr ins lokale Netz; Verbindungen enden dann in einer Zeitüberschreitung. Die App fragt beim Start einer Freigabe, über den Hinweis in der Providerliste (nur wenn ein Provider im lokalen Netz liegt) und unter *Mehr → Android*; scheitert ein Auftrag zu so einem Provider ohne sie, nennt das Ergebnis den Grund. |
 
 **Version aus Google Play:** ohne *Apps installieren* (Updates über Play), ohne *Standort* – die Bedingung
 „nur in WLAN X“ und der Auslöser „bei WLAN X“ entfallen dort, „nur im WLAN“ und „bei WLAN-Verbindung“ bleiben –
