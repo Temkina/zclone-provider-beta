@@ -2,7 +2,7 @@
 
 *English version: [below](#privacy-policy--zclone-provider)*
 
-Stand: 27. Oktober 2026
+Stand: 28. Oktober 2026
 
 Diese Datenschutzerklärung gilt für die Android-App **ZClone Provider** – sowohl für die Version von GitHub
 (Temkina/zclone-provider-beta) als auch für die Version aus Google Play.
@@ -30,6 +30,8 @@ automatischen Absturzberichte. Der Entwickler erhält von der App keinerlei Date
 - **Nur Version von GitHub:** Für Updates fragt die App bei GitHub (api.github.com) nach neuen Versionen – beim
   Start nur, wenn „Beim Start nach Updates suchen“ eingeschaltet ist. Dabei werden keine Daten aus der App
   übertragen. Die Version aus Google Play sucht nicht selbst nach Updates; sie wird über Google Play aktualisiert.
+- **Nur Version aus Google Play:** Ob die Freischaltung gekauft ist, fragt die App bei Google Play auf dem Handy ab
+  (siehe *Freischaltung*).
 - Links (z. B. GitHub, Telegram, Hilfeseiten) öffnen sich erst, wenn Sie sie antippen, in Ihrem Browser.
 
 ## Was auf dem Handy gespeichert wird
@@ -80,13 +82,13 @@ Beim Einrichten eines pCloud-Providers zeigt die App einen als solchen gekennzei
 sich darüber bei pCloud an, erhält der Entwickler eine Provision; für Sie ändert sich nichts. Dabei werden keine
 Daten aus der App übertragen – der Link öffnet nur den Browser.
 
-## Freischaltung (nur Version von GitHub)
+## Freischaltung (nur Version aus Google Play)
 
-Nach 50 Öffnungen führt die Version von GitHub Aufträge erst wieder aus, wenn sie mit einer Lizenz freigeschaltet ist.
-Dafür geben Sie beim Kauf über Ko-fi oder Stripe eine Gerätekennung an. Sie wird aus der Kennung berechnet, die Android
-dieser App gibt; die Android-Kennung selbst lässt sich daraus nicht zurückrechnen. Die App sendet dabei nichts – die
-Kennung übermitteln Sie selbst beim Kauf. Der Entwickler verwendet sie nur, um Ihren Freischaltcode zu erzeugen. Den Code
-prüft die App ohne Internet auf dem Gerät. Für den Kauf gelten die Datenschutzbestimmungen von Ko-fi bzw. Stripe.
+Ohne Freischaltung lässt sich in der Version aus Google Play ein Provider nutzen. Freigeschaltet wird mit einem
+einmaligen Kauf in der App über Google Play. Die App fragt dafür bei Google Play auf dem Handy ab, ob die Freischaltung
+gekauft ist; Zahlungsdaten erhält sie nicht. Die Zahlung wickelt Google ab; was Google dabei verarbeitet und an den
+Entwickler weitergibt (z. B. die Bestellnummer), regelt die Datenschutzerklärung von Google. Die Version von GitHub
+hat keine Freischaltung.
 
 ## Herunterladen der App
 
@@ -106,7 +108,7 @@ Providern und von Ihnen exportierte Dateien bleiben unberührt.
 
 # Privacy Policy – ZClone Provider
 
-Last updated: 27 October 2026
+Last updated: 28 October 2026
 
 This privacy policy applies to the Android app **ZClone Provider** – both the version from GitHub
 (Temkina/zclone-provider-beta) and the version from Google Play.
@@ -134,6 +136,8 @@ automatic crash reports. The developer receives no data at all from the app.
 - **GitHub version only:** to look for updates, the app asks GitHub (api.github.com) for new versions – at start
   only if “Check for updates on start” is switched on. No data from the app is sent. The Google Play version does
   not look for updates itself; it is updated through Google Play.
+- **Google Play version only:** the app asks Google Play on the phone whether the unlock has been bought (see
+  *Unlocking*).
 - Links (e.g. GitHub, Telegram, help pages) only open in your browser when you tap them.
 
 ## What is stored on the phone
@@ -183,13 +187,12 @@ When setting up a pCloud provider, the app shows a referral link marked as such.
 it, the developer receives a commission; nothing changes for you. No data from the app is transferred – the link
 only opens the browser.
 
-## Unlocking (GitHub version only)
+## Unlocking (Google Play version only)
 
-After 50 starts, the GitHub version only runs jobs again once it is unlocked with a licence. To do so, you provide a
-device ID when buying via Ko-fi or Stripe. It is calculated from the ID Android gives this app; the Android ID itself
-cannot be derived from it. The app sends nothing – you pass on the ID yourself when buying. The developer only uses it to
-create your unlock code. The app checks the code on the device without internet. Ko-fi's or Stripe's privacy policy
-applies to the purchase.
+Without unlocking, the Google Play version can be used with one provider. It is unlocked with a one-time in-app
+purchase through Google Play. For this, the app asks Google Play on the phone whether the unlock has been bought; it
+receives no payment data. Google handles the payment; what Google processes and passes on to the developer (e.g. the
+order number) is governed by Google's privacy policy. The GitHub version has no unlocking.
 
 ## Downloading the app
 
