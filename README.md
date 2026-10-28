@@ -98,9 +98,10 @@ Die App hat vier Bereiche: **Startseite**, **Provider**, **Aufträge** und **Meh
 - Das **Haus** oben auf den anderen Seiten führt immer zur Startseite.
 - Der **Pfeil** oben links führt zur vorherigen Seite – auf allen Unterseiten und auf *Provider*, *Aufträge* und *Mehr*,
   sobald es eine vorherige Seite gibt.
-- **Zurück neben dem Haus:** Direkt links neben dem Haus steht auf jeder Seite außer der Startseite ebenfalls ein
-  Pfeil ←. Er wirkt wie der Pfeil oben links bzw. die Zurück-Taste der Seite (z. B. in einer Kategorie bei
-  *Neuer Provider* zurück zu den Kacheln, in der Auswahl beendet er die Auswahl).
+- **Abbrechen neben dem Haus:** Direkt links neben dem Haus steht auf jeder Seite außer der Startseite ein ✕
+  *Abbrechen*. Es wirkt wie der Pfeil oben links bzw. die Zurück-Taste der Seite (in der Auswahl beendet es die
+  Auswahl). Bei *Neuer Provider* und *Neuer Auftrag* gibt es dort nur das eigene *Abbrechen*, das die Seite ohne
+  Speichern verlässt; zurück (z. B. zu den Kacheln bei *Neuer Provider*) geht es mit dem Pfeil oben links.
 - **Startseite:** Die Zurück-Taste von Android und die Zurück-Geste haben hier keine Wirkung; die App bleibt offen.
 - Damit oben auch auf einem 4,7-Zoll-Handy alles in eine Zeile passt, stehen selten gebrauchte Aktionen im ⋮-Menü
   (z. B. *Suchen* und *Weitergeben* bei den Providern, *Neuer Ordner* und *Diesen Ordner im WLAN freigeben* in der Dateiliste,
@@ -288,7 +289,7 @@ Verbindung testen, Ordneransicht in der App, Ordneransicht beim Teilen, Verschl�
   ganze Papierkorb dieses Providers.
 
 **Mehrere löschen:** Langes Drücken auf einen Provider (oder *⋮ oben → Auswählen*) startet die Auswahl, wie in der
-Dateiliste. Oben stehen dann das Symbol *Ausgewählte Provider weitergeben*, Zurück (beendet die Auswahl), das Haus
+Dateiliste. Oben stehen dann das Symbol *Ausgewählte Provider weitergeben*, Abbrechen (beendet die Auswahl), das Haus
 und ⋮. Die Rückfrage nennt alle gewählten Provider und die darauf aufbauenden (z. B. crypt), die mit gelöscht werden.
 
 **Umbenennen und Löschen:**
