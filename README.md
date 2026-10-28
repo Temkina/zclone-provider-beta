@@ -719,7 +719,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | **System** | Android | Zugriff auf alle Dateien, Benachrichtigungen, Akku-Optimierung, Standort, Lokales Netzwerk (ab Android 17) |
 | | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, Einstellungen sichern, rclone.conf exportieren und importieren, Provider weitergeben |
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
-| | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
+| | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen, leeren |
 | **Info** | Hilfe | Erste Schritte, Telegram, Protokoll per E-Mail senden |
 | | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Freischalten (nur Version aus Google Play), Version |
 | | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
@@ -741,7 +741,8 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
   - Mitschreiben an oder aus. Ausgeschaltet wird gar nichts mehr protokolliert, auch keine Fehler.
   - Höchstgröße und Aufbewahrungszeit sind einstellbar. Die Höchstgröße gilt genau für die eine Protokolldatei;
     ist sie voll, werden die ältesten Einträge überschrieben, die neuesten bleiben erhalten.
-  - Einträge ansehen, teilen, exportieren oder leeren.
+  - Einträge ansehen, teilen, exportieren oder leeren. *Protokoll leeren* steht direkt unter *Mehr → Protokoll* und
+    im ⋮-Menü der Anzeige, jeweils mit Rückfrage; danach erscheint „Protokoll geleert.“
   - Zugangsdaten erscheinen nie im Protokoll.
   - Zur Fehlersuche hält es auch fest, wie Android die App im Hintergrund behandelt: Planung der Aufträge,
     Standby-Gruppe, Akku-Optimierung, Prozess-Beendigungen und Abbruchgründe.
@@ -787,7 +788,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | Apps installieren | Updates aus der App heraus (Android fragt jedes Mal nach) |
 | Fingerabdruck | App-Sperre |
 | Kamera | nur zum Einlesen eines QR-Codes (wird erst beim Scannen gefragt; ohne sie: aus einem Bild lesen). Bilder werden nicht gespeichert. |
-| Lokales Netzwerk (ab Android 17, Gruppe „Geräte in der Nähe“) | Provider im eigenen Netz (z. B. NAS unter 192.168.…, `nas.local`, `fritz.box`) und Freigaben für andere Geräte. Ohne sie sperrt Android jeden Verkehr ins lokale Netz; Verbindungen enden dann in einer Zeitüberschreitung. Die App fragt beim Start einer Freigabe, über den Hinweis in der Providerliste (nur wenn ein Provider im lokalen Netz liegt) und unter *Mehr → Android*; scheitert ein Auftrag zu so einem Provider ohne sie, nennt das Ergebnis den Grund. |
+| Lokales Netzwerk (ab Android 17, Gruppe „Geräte in der Nähe“) | Provider im eigenen Netz (z. B. NAS unter 192.168.…, `nas.local`, `fritz.box`) und Freigaben für andere Geräte. Ohne sie sperrt Android jeden Verkehr ins lokale Netz; Verbindungen enden dann in einer Zeitüberschreitung. Die App fragt beim Start einer Freigabe, über den Hinweis in der Providerliste (nur wenn ein Provider im lokalen Netz liegt) und unter *Mehr → Android*; scheitert ein Auftrag zu so einem Provider ohne sie, nennt das Ergebnis den Grund. Das Protokoll hält jede Abfrage und ihre Antwort fest, und auch, warum nicht gefragt wurde (bereits erteilt oder bis Android 16 nicht nötig). |
 
 **Version aus Google Play:** ohne *Apps installieren* (Updates über Play), ohne *Standort* – die Bedingung
 „nur in WLAN X“ und der Auslöser „bei WLAN X“ entfallen dort, „nur im WLAN“ und „bei WLAN-Verbindung“ bleiben –
