@@ -66,6 +66,7 @@ Jede Berechtigung ist optional und lässt sich in den Android-Einstellungen wied
 | Akku-Optimierung | damit Aufträge und Freigaben nicht beendet werden |
 | Wecker | Aufträge zu festen Uhrzeiten |
 | Kamera | nur zum Einlesen eines QR-Codes; Bilder werden nicht gespeichert |
+| Lokales Netzwerk (ab Android 17) | nur für Provider im eigenen Netz (z. B. NAS) und Freigaben an andere Geräte |
 | Root | nur auf Ihren Wunsch |
 | Apps installieren (nur Version von GitHub) | nur für Updates dieser App |
 | Standort (nur Version von GitHub) | nur, um den WLAN-Namen für „nur in WLAN X“ zu lesen – ein Standort wird nie ermittelt oder gespeichert |
@@ -172,6 +173,7 @@ Every permission is optional and can be revoked in the Android settings.
 | Battery optimization | so that jobs and shares are not stopped |
 | Alarms | jobs at fixed times |
 | Camera | only to scan a QR code; images are not stored |
+| Local network (Android 17 and later) | only for providers in your own network (e.g. a NAS) and shares to other devices |
 | Root | only on your request |
 | Install apps (GitHub version only) | only for updates of this app |
 | Location (GitHub version only) | only to read the Wi-Fi name for “only on Wi-Fi X” – a location is never determined or stored |
