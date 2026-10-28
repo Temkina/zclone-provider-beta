@@ -85,8 +85,9 @@ Daten aus der App übertragen – der Link öffnet nur den Browser.
 ## Freischaltung (nur Version aus Google Play)
 
 Ohne Freischaltung lässt sich in der Version aus Google Play ein Provider nutzen. Freigeschaltet wird mit einem
-einmaligen Kauf in der App über Google Play. Die App fragt dafür bei Google Play auf dem Handy ab, ob die Freischaltung
-gekauft ist; Zahlungsdaten erhält sie nicht. Die Zahlung wickelt Google ab; was Google dabei verarbeitet und an den
+einmaligen Kauf in der App über Google Play. Dafür enthält die Version aus Google Play die Kauf-Bibliothek von Google
+(Google Play Billing Library). Die App fragt damit bei Google Play auf dem Handy ab, ob die Freischaltung gekauft ist;
+Zahlungsdaten erhält sie nicht, und sie übergibt Google beim Kauf keine eigenen Kennungen. Die Zahlung wickelt Google ab; was Google dabei verarbeitet und an den
 Entwickler weitergibt (z. B. die Bestellnummer), regelt die Datenschutzerklärung von Google. Die Version von GitHub
 hat keine Freischaltung.
 
@@ -190,8 +191,9 @@ only opens the browser.
 ## Unlocking (Google Play version only)
 
 Without unlocking, the Google Play version can be used with one provider. It is unlocked with a one-time in-app
-purchase through Google Play. For this, the app asks Google Play on the phone whether the unlock has been bought; it
-receives no payment data. Google handles the payment; what Google processes and passes on to the developer (e.g. the
+purchase through Google Play. For this, the Google Play version includes Google's purchase library (Google Play
+Billing Library). With it, the app asks Google Play on the phone whether the unlock has been bought; it receives no
+payment data and passes no identifiers of its own to Google with the purchase. Google handles the payment; what Google processes and passes on to the developer (e.g. the
 order number) is governed by Google's privacy policy. The GitHub version has no unlocking.
 
 ## Downloading the app
