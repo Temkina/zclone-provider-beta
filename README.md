@@ -141,7 +141,8 @@ Die App öffnet immer mit der Startseite.
 - **Gezählt werden Anbieter:** Ein verschlüsselter Bereich (crypt) oder eine andere Hülle zählt zu dem Provider, auf
   dem sie liegt – „Mega“ mit „Mega_enc“ ist ein Provider. Er gilt als erreichbar, wenn auch seine verschlüsselten
   Bereiche erreichbar sind; sonst nennt die Karte den betroffenen Eintrag (z. B. „Mega_enc“). Unter der Zahl auf der
-  Kachel *Provider* steht, wie viele davon einen verschlüsselten Bereich haben („davon 3 verschlüsselt“).
+  Kachel *Provider* steht, wie viele davon einen verschlüsselten Bereich haben („davon 3 verschlüsselt“). Auch die
+  Meldung nach einer Prüfung („Provider geprüft: 3 erreichbar …“) zählt so, auf der Startseite wie in der Providerliste.
 - **Infokarte:** letzter und nächster Auftrag, App-Sperre; aufgeklappt zusätzlich App-Version, rclone-Version und Freigaben.
 - **Haben Sie Schwierigkeiten?** mit *Hilfe* und *Telegram*.
 - **ZClone Provider unterstützen** (nur in der Version von GitHub): öffnet *Sponsor*.
@@ -715,7 +716,7 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen |
 | **Info** | Hilfe | Erste Schritte, Telegram, Protokoll per E-Mail senden |
-| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Freischalten (nur Version von GitHub), Version |
+| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Freischalten (nur Version aus Google Play), Version |
 | | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
 
 - **Dateien und Ordner:**
@@ -751,19 +752,15 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
     sie sich direkt, bei mehreren erscheint die Auswahl nur aus ihnen; ist keine da, die Auswahl aller Apps.
 - **Über:** Lizenzen (alle Bestandteile mit vollständigem Lizenztext), Datenschutz, Projektseite von ZClone auf GitHub,
   Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub.
-- **Freischalten** (nur Version von GitHub, unter *Über*):
-  - Die App lässt sich 50-mal öffnen (gezählt ab Version 1.29.39). Danach erscheint bei jedem Öffnen der Hinweis
-    *Lizenz erforderlich*, und Aufträge werden nicht mehr ausgeführt – weder automatisch noch über *Jetzt
-    ausführen*. Jeder ausgelassene Auftrag meldet sich mit einer Benachrichtigung und an seiner Karte; die Statuskarte
-    steht dann auf *Eingeschränkt*.
-  - Dateien, Provider, Freigaben und der Export der rclone.conf funktionieren weiter.
-  - Freischalten: Lizenz über Ko-fi oder Stripe kaufen und dabei die **Gerätekennung** angeben (Antippen kopiert
-    sie). Den Freischaltcode tragen Sie unter *Freischalten* ein. Er gilt nur auf diesem Gerät; nach einer
-    Werkszurücksetzung oder auf einem anderen Gerät ist ein neuer nötig. Eine Neuinstallation der App ändert die
-    Gerätekennung nicht.
-  - Ab Version 1.29.40 nimmt die App außerdem eine Lizenz für alle Geräte an. Sie wird nur vom Entwickler vergeben;
-    wie jeder Freischaltcode lässt sie sich weder erraten noch berechnen.
-  - Die Version aus Google Play ist nicht betroffen.
+- **Freischalten** (nur Version aus Google Play, unter *Über*):
+  - Ohne Freischaltung lässt sich ein Provider nutzen – samt seiner Verschlüsselung (z. B. „Mega“ mit „Mega_enc“).
+    Einen weiteren Provider einzurichten oder zu importieren, verlangt die Freischaltung; die App lehnt ihn mit einem
+    Hinweis ab, bevor eine Anmeldung beginnt.
+  - Aufträge, Dateien, Freigaben und der Export der rclone.conf sind nie begrenzt.
+  - Freischalten: einmaliger Kauf in der App über Google Play. Er gilt für das Google-Konto, auch auf einem neuen
+    Handy (*Kauf wiederherstellen*). Ob gekauft ist, fragt die App bei jedem Start bei Google Play ab; ohne Antwort
+    gilt der zuletzt bekannte Stand.
+  - Die Version von GitHub ist nicht begrenzt.
 
 ---
 
@@ -847,7 +844,8 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
   jemand mit dem entsperrten Handy die App öffnet.
 - **Verteilung:** zurzeit nur über GitHub, nicht bei F-Droid. Bald auch im Play Store, dort mit abgespeckten
   Möglichkeiten: ohne Selbst-Update und Sponsor-Seite, ohne *Standort* (keine WLAN-Bedingung nach Name) und ohne
-  direkte Akku-Anfrage (siehe [Berechtigungen](#berechtigungen)).
+  direkte Akku-Anfrage (siehe [Berechtigungen](#berechtigungen)), ohne Freischaltung nur ein Provider (siehe
+  *Freischalten*).
 
 ---
 
