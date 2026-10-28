@@ -457,7 +457,7 @@ gleichzeitig; Aufträge zum selben Provider warten weiter aufeinander. Das Proto
 
 **Während des Laufs gelöscht:** Wird eine Datei gelöscht, während ein Auftrag läuft, überspringt rclone sie und
 wiederholt den Lauf; eine halb übertragene Kopie entfernt rclone selbst. Der Auftrag gilt als erfolgreich, das
-Ergebnis nennt die übersprungenen Dateien (z. B. „1 Datei(en) während des Laufs gelöscht“), das Protokoll ihre Namen.
+Ergebnis nennt die übersprungenen Dateien (z. B. „1 Datei während des Laufs gelöscht“), das Protokoll ihre Namen.
 
 **Richtung**
 
@@ -689,7 +689,8 @@ Gilt für die Version von GitHub; die Version aus Google Play wird über Play ak
 - **Sprache / Language:** Die Auswahl zeigt zuerst *Wie das Handy (System)*, dann die zwölf Sprachen alphabetisch
   nach ihrem Eigennamen, jeweils mit der Flagge des Landes davor (Portugiesisch: Brasilien, Arabisch: Saudi-Arabien,
   Englisch: Vereinigtes Königreich). Bei einer Handysprache, die die App nicht kennt, erscheint sie auf Englisch.
-  Arabisch wird von rechts nach links dargestellt.
+  Arabisch wird von rechts nach links dargestellt. Das Ergebnis erfolgreicher Läufe (z. B. „3 Dateien übertragen“)
+  erscheint nach einem Sprachwechsel in der neuen Sprache; Fehlermeldungen behalten den Wortlaut des Laufs.
 - **Schwebende Leiste** (Standard an), siehe [Bedienung](#schwebende-leiste).
 - **Hintergrund** im hellen Design: *Systemfarben* (Standard, Farben von Android passend zum Hintergrundbild),
   *Hellgrau* oder *Elfenbein*. Gilt sofort für Seiten, Listen, Karten, Kacheln, Dialoge und die schwebende Leiste
@@ -860,7 +861,7 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
   - die 242 Go-Bibliotheken in rclone (MIT, Apache 2.0, BSD, MPL 2.0, ISC, CC0 und eine unter LGPL 3.0 –
     `github.com/cloudsoda/sddl`, mit GPL-3-Text und Hinweis auf Quellcode und Bauanleitung),
   - Go selbst (Standardbibliothek und Laufzeit, BSD-3-Clause),
-  - die 150 Android-Bibliotheken (AndroidX, Compose, CameraX, Kotlin, kotlinx.coroutines, ZXing, Guava u. a.; Apache 2.0,
+  - die 166 Android-Bibliotheken (AndroidX, Compose, CameraX, Kotlin, kotlinx.coroutines, ZXing, Guava u. a.; Apache 2.0,
     CameraX zusätzlich BSD-3-Clause, Checker Framework MIT),
   - nur in der Version aus Google Play 12 weitere für den Kauf in der App: Google Play Billing und Google-Play-Dienste
     (Android Software Development Kit License, mit dem vollständigen Text aus der Bibliothek) sowie datatransport und
