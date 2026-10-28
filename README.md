@@ -29,7 +29,6 @@ WebDAV (Telekom, Nextcloud …) und verschlüsselte crypt-Provider.
   <img src="bilder/02-provider.png" width="160" alt="Provider">
   <img src="bilder/03-auftraege.png" width="160" alt="Aufträge">
   <img src="bilder/04-mehr.png" width="160" alt="Mehr: Einstellungen und System">
-  <img src="bilder/05-mehr-info.png" width="160" alt="Mehr: System und Info">
 </p>
 
 Startseite, Provider, Aufträge und *Mehr* (Hintergrund Elfenbein).
