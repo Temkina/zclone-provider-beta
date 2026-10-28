@@ -795,7 +795,8 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
 - **Keine Konten, keine Statistik.** Die App spricht nur mit
   - Ihren Providern,
   - `api.github.com` und `github.com`, nur für die Update-Suche und den Download,
-  - `graph.microsoft.com`, nur beim Einrichten von OneDrive, um das richtige Laufwerk zu finden.
+  - `graph.microsoft.com`, nur beim Einrichten von OneDrive, um das richtige Laufwerk zu finden,
+  - nur in der Version aus Google Play: Google Play auf dem Handy, um die Freischaltung zu kaufen bzw. abzufragen.
 - **Zugangsdaten** liegen ausschließlich im privaten Speicher der App, für andere Apps unlesbar.
   Mit App-Sperre ist die `rclone.conf` zusätzlich mit dem App-Passwort verschlüsselt.
   Damit Aufträge im Hintergrund laufen können, ist das App-Passwort selbst mit einem Schlüssel aus dem
@@ -860,7 +861,11 @@ in der man ZClone Provider selbst auf „Nicht optimieren“ stellt.
   - die 242 Go-Bibliotheken in rclone (MIT, Apache 2.0, BSD, MPL 2.0, ISC, CC0 und eine unter LGPL 3.0 –
     `github.com/cloudsoda/sddl`, mit GPL-3-Text und Hinweis auf Quellcode und Bauanleitung),
   - Go selbst (Standardbibliothek und Laufzeit, BSD-3-Clause),
-  - die 127 Android-Bibliotheken (AndroidX, Compose, CameraX, Kotlin, kotlinx.coroutines, ZXing u. a., alle Apache 2.0).
+  - die 150 Android-Bibliotheken (AndroidX, Compose, CameraX, Kotlin, kotlinx.coroutines, ZXing, Guava u. a.; Apache 2.0,
+    CameraX zusätzlich BSD-3-Clause, Checker Framework MIT),
+  - nur in der Version aus Google Play 12 weitere für den Kauf in der App: Google Play Billing und Google-Play-Dienste
+    (Android Software Development Kit License, mit dem vollständigen Text aus der Bibliothek) sowie datatransport und
+    Firebase-Encoder (Apache 2.0).
 
 Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
 
@@ -903,6 +908,9 @@ Die vollständigen Texte stehen in der App unter *Mehr → Über → Lizenzen*.
 - **Everyday features:** a permanent status bar icon, in-app updates with checksum verification,
   12 languages, a choice of background in the light design (system colors, light gray, ivory), a tablet layout
   and a detailed log you can turn off.
+
+The Google Play version can be used with one provider (including its encryption); more providers need a one-time
+in-app purchase through Google Play. The GitHub version has no such limit.
 
 It uses the same **rclone-extra** build as ZClone on the PC. No accounts, no ads, no tracking.
 Download: [zclone-provider-beta releases](https://github.com/Temkina/zclone-provider-beta/releases) (tag `android-<version>`).
