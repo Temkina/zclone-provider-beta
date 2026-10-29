@@ -581,11 +581,6 @@ Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn Sie *Mit Fingerabdru
   rclone-eigenen Format, also auch mit rclone am PC lesbar.
 - *Passwort ändern* verschlüsselt neu, *Ausschalten* entschlüsselt wieder.
 - **Schutz gegen Durchprobieren:** Ab dem 5. falschen Passwort wird die Wartezeit immer länger.
-- **Fingerabdrücke am Handy geändert** (einer hinzugefügt oder entfernt): Dann gilt der Fingerabdruck in der ganzen
-  App nicht mehr – beim Entsperren, bei Bestätigungen und bei *Passwort vergessen?* (dort nur noch die Displaysperre) –,
-  bis einmal das App-Passwort eingegeben wurde. Danach fragt die App, ob der Fingerabdruck wieder gelten soll.
-  Erkannt wird das über einen eigenen Schlüssel im Android-Keystore, den Android bei jeder Änderung der
-  Fingerabdrücke ungültig macht.
 - Aufträge und Freigaben laufen bei gesperrter App weiter.
 - **Passwort vergessen?** Auf dem Sperrbildschirm oder unter *Mehr → Sicherheit*:
   - Mit **Fingerabdruck oder der Displaysperre des Handys** (PIN, Muster, Passwort) bestätigen, dann ein
