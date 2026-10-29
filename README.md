@@ -597,8 +597,13 @@ Sperrbildschirm; nach dem Fingerabdruck fragt er erst, wenn Sie *Mit Fingerabdru
   - Die App sperrt sich und verlangt das **App-Passwort**; der Fingerabdruck reicht dann nicht.
     Danach geht es mit dem eingegebenen Passwort weiter (nur im Arbeitsspeicher).
   - Es wird dabei nie ein neuer Schlüssel erzeugt und die `rclone.conf` wird nie unverschlüsselt geschrieben.
+  - Liefert der Keystore unter demselben Namen einen anderen Schlüssel als beim Setzen des Passworts
+    (beobachtet nach Neustarts), speichert die App das eingegebene Passwort zusätzlich mit diesem Schlüssel.
+    Danach laufen Aufträge im Hintergrund mit beiden Schlüsseln ohne Eingabe. Ein neues App-Passwort löscht
+    diese Zusatzeinträge.
   - Bis dahin startet rclone nicht und meldet verständlich, warum. Das Protokoll hält den Zustand des
-    Keystores fest (Schlüssel vorhanden, Erzeugungsdatum, Sicherheitsstufe).
+    Keystores fest (Schlüssel vorhanden, Erzeugungsdatum, Sicherheitsstufe, alle Einträge der App mit
+    Erzeugungsdatum, Zusatzeinträge). Den vollständigen Fehler gibt es einmal je Lauf, danach eine Kurzzeile.
 
 **Bestätigung vor sensiblen Aktionen** (Abschnitt *Bestätigung*):
 
