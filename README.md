@@ -720,8 +720,8 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
 | | Sicherheit | App-Sperre, Bestätigung vor dem Weitergeben, Einstellungen sichern, rclone.conf exportieren und importieren, Provider weitergeben |
 | | Erweitert | Freigaben und Streaming, Aufträge gleichzeitig ausführen, Steuerung durch andere Apps, Root-Zugriff |
 | | Protokoll | Mitschreiben, Größe, Aufbewahrung, ansehen, exportieren, teilen, leeren |
-| **Info** | Hilfe | Erste Schritte, Telegram, Protokoll per E-Mail senden |
-| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Protokoll per E-Mail senden, Freischalten (nur Version aus Google Play), Version |
+| **Info** | Hilfe | Erste Schritte, Telegram |
+| | Über | Lizenzen, Datenschutz, Projektseite von ZClone, Freischalten (nur Version aus Google Play), Version |
 | | Sponsor | Unterstützung der Entwicklung (nur Version von GitHub) |
 
 - **Dateien und Ordner:**
@@ -753,10 +753,6 @@ entfernt und enthält nur, was ihr Name sagt. Unter jedem Eintrag steht kurz der
     höchstens etwa 143 Zeichen für verschlüsselte Dateinamen – nach der rclone-Dokumentation zu crypt) und
     „Wie oft synchronisieren?“ (zu häufige Abgleiche können Anbieter bremsen oder sperren lassen).
   - *Telegram:* Fragen, Probleme, Vorschläge.
-  - *Protokoll per E-Mail senden* (auch unter *Über*): öffnet die Mail-App mit dem Protokoll im Anhang und dem
-    Entwickler als Empfänger. Nur zum Einsenden des Protokolls – E-Mails, die nicht nur das Protokoll enthalten, werden
-    nicht beachtet; für Fragen gibt es Telegram. Die Adresse selbst zeigt die App nicht an. Mit einer Mail-App öffnet
-    sie sich direkt, bei mehreren erscheint die Auswahl nur aus ihnen; ist keine da, die Auswahl aller Apps.
 - **Über:** Lizenzen (alle Bestandteile mit vollständigem Lizenztext), Datenschutz, Projektseite von ZClone auf GitHub,
   Version der App mit © 2026 Temkina; Tippen öffnet die Projektseite von ZClone Provider auf GitHub.
 - **Freischalten** (nur Version aus Google Play, unter *Über*):
